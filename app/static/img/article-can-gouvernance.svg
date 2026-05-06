@@ -1,10 +1,20 @@
-<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#f8f8f8"/>
-  <rect x="20" y="20" width="560" height="260" rx="8" fill="none" stroke="#dddddd" stroke-width="1"/>
-  <circle cx="300" cy="100" r="40" fill="#e30613" opacity="0.15"/>
-  <text x="300" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#e30613" opacity="0.3" font-weight="bold">VA</text>
-  <text x="300" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#5e5e5e" font-weight="bold">CAN 2024</text>
-<text x="300" y="95" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#5e5e5e" font-weight="bold">Gouvernance & Controle</text>
-
-  <text x="300" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#cccccc">Valeurs Africaines — Illustration editoriale</text>
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#bg)"/>
+<text x="40" y="55" fill="#fff" font-family="Georgia,serif" font-size="24" font-weight="bold">CAN 2024</text>
+<text x="40" y="80" fill="#e30613" font-family="Georgia,serif" font-size="16">Gouvernance, zones d'opacite et mecanismes de controle</text>
+<rect x="40" y="120" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="148" fill="#e30613" font-size="26" font-weight="bold">24</text>
+<text x="90" y="148" fill="#ccc" font-size="12">equipes participantes</text>
+<text x="60" y="170" fill="#999" font-size="11">5 stades construits</text>
+<rect x="40" y="200" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="228" fill="#e30613" font-size="26" font-weight="bold">1,5 Md$</text>
+<text x="115" y="228" fill="#ccc" font-size="12">budget total</text>
+<text x="60" y="250" fill="#999" font-size="11">Enquete sur les marches publics</text>
+<rect x="40" y="280" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="308" fill="#e30613" font-size="26" font-weight="bold">75%</text>
+<text x="110" y="308" fill="#ccc" font-size="12">des marches attribues sans appel d'offres</text>
+<text x="60" y="330" fill="#999" font-size="11">Mecanismes de controle insuffisants</text>
+<text x="400" y="430" text-anchor="middle" fill="#555" font-size="11">Valeurs Africaines</text>
 </svg>
+echo "CAN OK"
