@@ -29,7 +29,57 @@
             <a class="read-link" href="{{ url_for('main.article_detail', slug=featured.slug) if featured.slug else url_for('main.articles') }}">Lire l'analyse</a>
         </article>
         <div class="hero-map">
-            <div class="map-label">Carte strategique - Sahel</div>
+        </div>
+    </div>
+</section>
+
+<section class="today-africa-row">
+    <div class="container">
+        <h3>Aujourd'hui en Afrique</h3>
+        <div class="today-africa-grid">
+            <article class="today-item">
+                <p class="rubrique-label">Dossier special</p>
+                {% if today_focus.mali %}
+                <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=today_focus.mali.slug) }}">Mali - {{ today_focus.mali.title }}</a></h4>
+                <p class="meta">{{ today_focus.mali.date }}</p>
+                {% else %}
+                <h4>Mali: suivi quotidien en preparation</h4>
+                <p class="meta">Slot reserve pour l'actualite majeure du jour.</p>
+                {% endif %}
+            </article>
+
+            <article class="today-item">
+                <p class="rubrique-label">Afrique du Sud 🇿🇦</p>
+                {% if today_focus.media %}
+                <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=today_focus.media.slug) }}">{{ today_focus.media.title }}</a></h4>
+                <p class="meta">{{ today_focus.media.date }}</p>
+                {% else %}
+                <h4>Article Afrique du Sud du jour a selectionner</h4>
+                <p class="meta">Suivi quotidien Afrique du Sud.</p>
+                {% endif %}
+            </article>
+
+            <article class="today-item">
+                <p class="rubrique-label">Lifestyle</p>
+                {% if today_focus.lifestyle %}
+                <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=today_focus.lifestyle.slug) }}">{{ today_focus.lifestyle.title }}</a></h4>
+                <p class="meta">{{ today_focus.lifestyle.date }}</p>
+                {% else %}
+                <h4>Article lifestyle du jour a selectionner</h4>
+                <p class="meta">Selon actualite et audience.</p>
+                {% endif %}
+            </article>
+
+            <article class="today-item">
+                <p class="rubrique-label">Tech</p>
+                {% if today_focus.tech %}
+                <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=today_focus.tech.slug) }}">{{ today_focus.tech.title }}</a></h4>
+                <p class="meta">{{ today_focus.tech.date }}</p>
+                {% else %}
+                <h4>Article tech marquant a publier</h4>
+                <p class="meta">Innovation / numerique / IA en Afrique.</p>
+                {% endif %}
+            </article>
         </div>
     </div>
 </section>
@@ -39,8 +89,21 @@
         <h3>A la une</h3>
         <div class="headline-grid">
             {% for article in headlines %}
+            {% set fallback = '/static/img/article-ua-couches.png' %}
+            {% if 'pays' in (article.rubrique or '')|lower %}
+                {% set fallback = '/static/img/article-niger.png' %}
+            {% elif 'diplom' in (article.rubrique or '')|lower %}
+                {% set fallback = '/static/img/article-ua-couches.png' %}
+            {% elif 'renseignement' in (article.rubrique or '')|lower %}
+                {% set fallback = '/static/img/article-guerre-info-langues.png' %}
+            {% endif %}
             <article class="headline-card">
-                <div class="thumb"></div>
+                <div class="thumb">
+                    <img src="{{ article.image or fallback }}" alt="Illustration {{ article.rubrique }}">
+                    {% if article.country_flag %}
+                    <span class="country-flag">{{ article.country_flag }}</span>
+                    {% endif %}
+                </div>
                 <p class="rubrique-label">{{ article.rubrique }}</p>
                 <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=article.slug) }}">{{ article.title }}</a></h4>
                 <p class="meta">{{ article.date }} • {{ article.reading_time }}</p>

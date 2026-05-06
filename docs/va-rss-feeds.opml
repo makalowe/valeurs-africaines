@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Valeurs Africaines - Veille RSS</title>
+  </head>
+  <body>
+    <outline text="Securite-Conflits" title="Securite-Conflits">
+      <outline text="UN News - Africa" type="rss" xmlUrl="https://news.un.org/feed/subscribe/en/news/region/africa/feed/rss.xml" htmlUrl="https://news.un.org/en/news/region/africa"/>
+      <outline text="ReliefWeb Updates" type="rss" xmlUrl="https://reliefweb.int/updates/rss.xml" htmlUrl="https://reliefweb.int/"/>
+      <outline text="ISS Africa" type="rss" xmlUrl="https://issafrica.org/rss" htmlUrl="https://issafrica.org/"/>
+    </outline>
+    <outline text="Diplomatie-Institutions" title="Diplomatie-Institutions">
+      <outline text="African Union News" type="rss" xmlUrl="https://au.int/en/rss.xml" htmlUrl="https://au.int/"/>
+      <outline text="UN Security Council Meetings" type="rss" xmlUrl="https://www.un.org/securitycouncil/content/news/rss.xml" htmlUrl="https://www.un.org/securitycouncil/"/>
+      <outline text="ECOWAS News" type="rss" xmlUrl="https://ecowas.int/feed/" htmlUrl="https://ecowas.int/"/>
+    </outline>
+    <outline text="Ressources-Economie" title="Ressources-Economie">
+      <outline text="World Bank Africa" type="rss" xmlUrl="https://www.worldbank.org/en/region/afr/brief/rss" htmlUrl="https://www.worldbank.org/en/region/afr"/>
+      <outline text="IMF News" type="rss" xmlUrl="https://www.imf.org/en/News/RSS" htmlUrl="https://www.imf.org/en/News"/>
+      <outline text="AfDB News" type="rss" xmlUrl="https://www.afdb.org/en/news-and-events/rss.xml" htmlUrl="https://www.afdb.org/en/news-and-events"/>
+    </outline>
+    <outline text="Renseignement-Influences" title="Renseignement-Influences">
+      <outline text="CSIS Africa" type="rss" xmlUrl="https://www.csis.org/programs/africa-program/rss.xml" htmlUrl="https://www.csis.org/programs/africa-program"/>
+      <outline text="Chatham House Africa" type="rss" xmlUrl="https://www.chathamhouse.org/topics/africa/rss.xml" htmlUrl="https://www.chathamhouse.org/topics/africa"/>
+      <outline text="Reuters Africa" type="rss" xmlUrl="https://www.reutersagency.com/feed/?best-topics=africa" htmlUrl="https://www.reuters.com/world/africa/"/>
+    </outline>
+  </body>
+</opml>

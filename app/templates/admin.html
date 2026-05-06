@@ -3,12 +3,74 @@
 {% block content %}
 <section class="section">
   <div class="container">
-    <h1>Back-office articles</h1><p>Abonnes newsletter: {{ subscribers_count }}</p>
+    <h1>Back-office articles</h1>
+    <div class="kpi-grid">
+      <div class="kpi-card"><strong>{{ kpi.scheduled }}</strong><span>Articles planifies</span></div>
+      <div class="kpi-card"><strong>{{ kpi.published }}</strong><span>Articles publies</span></div>
+      <div class="kpi-card"><strong>{{ kpi.drafts }}</strong><span>Brouillons</span></div>
+      <div class="kpi-card"><strong>{{ kpi.subscribers }}</strong><span>Abonnes newsletter</span></div>
+    </div>
+    <p>Objectif mensuel: {{ kpi.monthly_goal }} publications planifiees (progression: {{ kpi.progress }}%).</p>
     <p><a href="{{ url_for('main.admin_logout') }}">Se deconnecter</a> | <a href="{{ url_for('main.export_subscribers_csv') }}">Exporter CSV abonnes</a></p>
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}<p>{{ messages[0] }}</p>{% endif %}
     {% endwith %}
+
+    <h2>Pipeline editorial</h2>
+    <p><strong>Collecte -> Tri -> Verification -> Angle -> Redaction</strong></p>
+    <p>Regle: rien n'entre en publication sans double verification.</p>
+
+    <h3>Rituel quotidien (60-90 min)</h3>
+    <ul>
+      <li>Matin: scan rapide headlines + alertes.</li>
+      <li>Midi: selection de 3 signaux faibles.</li>
+      <li>Soir: validation des faits + notes pour demain.</li>
+    </ul>
+
+    <h3>Outils concrets</h3>
+    <ul>
+      <li>Google Alerts ciblees (pays + themes)</li>
+      <li>Listes X/LinkedIn d'experts</li>
+      <li>Newsletters think tanks/universites</li>
+      <li>RSS agrege (Feedly/Inoreader)</li>
+    </ul>
+
+    <h3>Cadence recommandee</h3>
+    <ul>
+      <li>2 briefs/semaine (actualite chaude)</li>
+      <li>1 analyse de fond/semaine</li>
+      <li>1 note de contexte pays/semaine</li>
+    </ul>
+
+    <h2>Sujet verifie -> brouillon automatique</h2>
+    <form class="form" method="post" action="{{ url_for('main.create_verified_draft') }}">
+      <label>Rubrique</label>
+      <input name="rubrique" required>
+      <label>Titre du sujet</label>
+      <input name="title" required>
+      <label>Pseudonyme (signature)</label>
+      <input name="author" value="Redaction VA" required>
+      <label>Qui parle ? (acteur)</label>
+      <input name="actor" required>
+      <label>Quel interet ? (agenda)</label>
+      <input name="agenda" required>
+      <label>Quelle preuve ? (document/donnee/citation)</label>
+      <textarea name="evidence" rows="3" required></textarea>
+      <label>Quelle contradiction ? (contre-source)</label>
+      <textarea name="contradiction" rows="3" required></textarea>
+      <label>Quelle consequence geopolitique ?</label>
+      <textarea name="consequence" rows="3" required></textarea>
+      <label>Angle editorial propose</label>
+      <textarea name="angle" rows="3" required></textarea>
+      <label>Temps de lecture cible</label>
+      <input name="reading_time" value="7 min de lecture" required>
+      <label>Sources (une par ligne) - obligatoire</label>
+      <textarea name="sources" rows="4" required></textarea>
+      <label>Date de publication (optionnel)</label>
+      <input name="scheduled_at" type="date">
+      <button type="submit" class="btn btn-primary">Creer brouillon verifie</button>
+    </form>
 
     <h2>Nouvel article</h2>
     <form class="form" method="post">
@@ -16,10 +78,16 @@
       <input name="rubrique" required>
       <label>Titre</label>
       <input name="title" required>
+      <label>Pseudonyme (signature)</label>
+      <input name="author" value="Redaction VA" required>
       <label>Resume</label>
       <input name="excerpt" required>
       <label>Temps de lecture</label>
       <input name="reading_time" value="6 min de lecture" required>
+      <label>Sources (une par ligne) - obligatoire</label>
+      <textarea name="sources" rows="4" required></textarea>
+      <label>Date de publication (optionnel)</label>
+      <input name="scheduled_at" type="date">
       <label>Contenu</label>
       <textarea name="body" rows="6" required></textarea>
       <button type="submit" class="btn btn-primary">Creer brouillon</button>
@@ -28,7 +96,7 @@
     <h2>Articles</h2>
     <table class="admin-table">
       <thead>
-        <tr><th>ID</th><th>Rubrique</th><th>Titre</th><th>Statut</th><th>Mis en avant</th><th>Actions</th></tr>
+        <tr><th>ID</th><th>Rubrique</th><th>Titre</th><th>Statut</th><th>Date prevue</th><th>Mis en avant</th><th>Actions</th></tr>
       </thead>
       <tbody>
       {% for row in rows %}
@@ -37,10 +105,15 @@
           <td>{{ row.rubrique }}</td>
           <td>{{ row.title }}</td>
           <td>{{ row.status }}</td>
+          <td>{{ row.scheduled_at or '-' }}</td>
           <td>{{ 'Oui' if row.is_featured else 'Non' }}</td>
           <td>
             <form method="post" action="{{ url_for('main.publish_article', article_id=row.id) }}" style="display:inline;">
               <button type="submit">Publier</button>
+            </form>
+            <form method="post" action="{{ url_for('main.schedule_article', article_id=row.id) }}" style="display:inline;">
+              <input name="scheduled_at" type="date" required>
+              <button type="submit">Planifier</button>
             </form>
             <form method="post" action="{{ url_for('main.feature_article', article_id=row.id) }}" style="display:inline;">
               <button type="submit">Mettre en une</button>

@@ -169,6 +169,601 @@
         "facts_checked": true,
         "peer_reviewed": true
       }
+    },
+    {
+      "id": 14,
+      "rubrique": "Ressources",
+      "title": "Petrole, gaz et minerais critiques: les nouveaux leviers de puissance",
+      "excerpt": "L'economie politique des ressources devient centrale dans les arbitrages strategiques africains.",
+      "body": "Contenu en cours de redaction.",
+      "reading_time": "7 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "slug": "petrole-gaz-et-minerais-critiques-les-nouveaux-leviers-de-puissance",
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-13",
+      "image": null,
+      "sources": [
+        "Banque africaine de developpement: https://www.afdb.org/",
+        "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
+        "FMI News: https://www.imf.org/en/News"
+      ]
+    },
+    {
+      "id": 15,
+      "rubrique": "Securite",
+      "title": "Renseignement et contre-terrorisme: mutations discretes",
+      "excerpt": "Les cooperations informelles et les architectures hybrides gagnent en importance sur le terrain.",
+      "body": "Contenu en cours de redaction.",
+      "reading_time": "9 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "slug": "renseignement-et-contre-terrorisme-mutations-discretes",
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-18",
+      "image": null,
+      "sources": [
+        "Union africaine (Paix et securite): https://au.int/",
+        "UN Security Council: https://www.un.org/securitycouncil/",
+        "ISS Africa: https://issafrica.org/"
+      ]
+    },
+    {
+      "id": 16,
+      "rubrique": "Analyse de fond",
+      "title": "Sahel 2026: architectures de securite concurrentes et recomposition des alliances",
+      "slug": "sahel-2026-architectures-de-securite-concurrentes-et-recomposition-des-alliances",
+      "excerpt": "Lecture strategique des nouveaux equilibres militaires et diplomatiques au Sahel entre Etats, partenaires exterieurs et acteurs regionaux.",
+      "body": "Angle: comparer les modeles de cooperation securitaire, leurs couts politiques et leur soutenabilite institutionnelle.",
+      "reading_time": "11 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-15",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 17,
+      "rubrique": "Diplomatie",
+      "title": "Union africaine et puissances exterieures: marges de manoeuvre reelles en 2026",
+      "slug": "union-africaine-et-puissances-exterieures-marges-de-manoeuvre-reelles-en-2026",
+      "excerpt": "Comment les institutions africaines arbitrent entre partenariats, souverainete et contraintes de financement.",
+      "body": "Angle: capacite de negociation continentale face aux agendas concurrentiels (USA, Chine, Europe, Golfe, Russie, Turquie).",
+      "reading_time": "9 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-06",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "CEDEAO: https://ecowas.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa"
+      ]
+    },
+    {
+      "id": 18,
+      "rubrique": "Ressources",
+      "title": "Minerais critiques africains: souverainete industrielle ou nouvelle dependance?",
+      "slug": "minerais-critiques-africains-souverainete-industrielle-ou-nouvelle-dependance",
+      "excerpt": "Enjeux de transformation locale, fiscalite extractive, corridors logistiques et diplomatie des chaines de valeur.",
+      "body": "Angle: evaluer les politiques publiques qui captent la valeur domestique au-dela de l'extraction brute.",
+      "reading_time": "10 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-17",
+      "image": null,
+      "sources": [
+        "Banque africaine de developpement: https://www.afdb.org/",
+        "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
+        "FMI News: https://www.imf.org/en/News"
+      ]
+    },
+    {
+      "id": 19,
+      "rubrique": "Economie politique",
+      "title": "Dette, inflation, stabilite: l'equation politique des Etats francophones",
+      "slug": "dette-inflation-stabilite-l-equation-politique-des-etats-francophones",
+      "excerpt": "Analyse des arbitrages budgetaires et de leurs effets sur la legitimite politique et la cohesion sociale.",
+      "body": "Angle: relier contraintes macroeconomiques, gouvernance et risque de fragmentation institutionnelle.",
+      "reading_time": "8 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-20",
+      "image": null,
+      "sources": [
+        "Banque africaine de developpement: https://www.afdb.org/",
+        "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
+        "FMI News: https://www.imf.org/en/News"
+      ]
+    },
+    {
+      "id": 20,
+      "rubrique": "Renseignement",
+      "title": "Renseignement africain: modernisation silencieuse et cooperation selective",
+      "slug": "renseignement-africain-modernisation-silencieuse-et-cooperation-selective",
+      "excerpt": "Etat des capacites, limites doctrinales et nouveaux formats de cooperation dans un environnement conflictuel.",
+      "body": "Angle: doctrine, cadre legal, interoperabilite et effets collateraux democratiques.",
+      "reading_time": "9 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-10",
+      "image": null,
+      "sources": [
+        "Africa Center for Strategic Studies: https://africacenter.org/",
+        "Timbuktu Institute: https://timbuktu-institute.org/",
+        "CSIS Africa Program: https://www.csis.org/programs/africa-program"
+      ]
+    },
+    {
+      "id": 21,
+      "rubrique": "Securite",
+      "title": "Brief: Sahel 2026, pourquoi les Etats privilegient les architectures bilaterales",
+      "slug": "brief-sahel-2026-pourquoi-les-etats-privilegient-les-architectures-bilaterales",
+      "excerpt": "Au Sahel central, les Etats privilegient des architectures securitaires bilaterales pour gagner en rapidite decisionnelle, au risque d'affaiblir la coordination regionale de long terme.",
+      "body": "Au cours des derniers cycles politiques et securitaires, les Etats du Sahel central ont progressivement donne la priorite a des formats bilateraux et nationaux de cooperation. Cette orientation repond d'abord a une contrainte de temps: les executifs veulent reduire les delais entre l'alerte, la decision et le deploiement operationnel.\n\nLe premier avantage de cette option est la flexibilite. Les accords bilateraux permettent d'ajuster rapidement les appuis techniques, le partage du renseignement et les dispositifs de formation selon les besoins du moment. Dans un environnement ou les menaces se deplacent vite, cette souplesse est politiquement valorisee comme une preuve de souverainete strategique.\n\nLe second avantage est interne: la lisibilite du commandement. Les gouvernements gardent un meilleur controle narratif sur leurs choix securitaires et presentent ces choix comme des decisions nationales plutot que comme des compromis regionaux. Cela peut consolider la legitimite a court terme, surtout dans des contextes de pression sociale.\n\nMais le cout de cette bilateralisation apparait vite a l'echelle regionale. Les menaces armees restent transfrontalieres, alors que les reponses deviennent plus fragmentees. Quand les doctrines, les regles d'engagement et les priorites ne sont pas suffisamment alignees, la continuite operationnelle s'erosionne dans les zones frontieres.\n\nUn autre risque concerne l'interoperabilite. La multiplication des partenaires externes, chacun avec ses standards, peut compliquer la compatibilite des chaines de commandement, des equipements et des procedures de renseignement. Le resultat est parfois une efficacite tactique immediate, mais une coherence strategique plus difficile a maintenir.\n\nPour les douze prochains mois, l'enjeu ne sera pas de revenir aux anciens schemas, mais de combiner deux exigences: autonomie nationale et coordination regionale minimale. Sans socle commun (renseignement, logistique, poursuite transfrontaliere), les gains de court terme risquent de rester precaires.\n\nPoints de vigilance editoriale pour la suite:\n- mesurer les effets concrets sur la securite des populations locales;\n- suivre les ecarts entre annonces politiques et capacites reelles;\n- documenter la qualite de coordination entre Etats voisins.",
+      "reading_time": "7 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-03",
+      "author": "Amani K. N'Dala",
+      "scheduled_at": null,
+      "image": null,
+      "sources": [
+        "Union africaine (Paix et securite): https://au.int/",
+        "UN Security Council: https://www.un.org/securitycouncil/",
+        "ISS Africa: https://issafrica.org/"
+      ]
+    },
+    {
+      "id": 22,
+      "rubrique": "Analyse de fond",
+      "title": "Souverainete militaire vs coordination regionale: le dilemme strategique du Sahel central",
+      "slug": "souverainete-militaire-vs-coordination-regionale-le-dilemme-strategique-du-sahel-central",
+      "excerpt": "Le Sahel central entre dans une phase ou l'autonomie securitaire des Etats progresse, tandis que la coherence regionale se contracte.",
+      "body": "Le Sahel central connait une recomposition securitaire profonde. Les Etats concernes cherchent a consolider leur autonomie militaire dans un environnement marque par l'instabilite, la pression interieure et la concurrence d'acteurs externes. Cette evolution n'est pas uniquement doctrinale: elle repond a un calcul politique precis, celui de reprendre la main sur le tempo des decisions et sur la legitimite de l'action securitaire.\n\nPremier axe: la souverainete operationnelle. Les formats bilateraux permettent des arbitrages plus rapides que les cadres multilateraux classiques. Ils reduisent les couts de transaction diplomatique et offrent une plus grande marge de confidentialite tactique, notamment sur le renseignement et les appuis techniques. Pour des regimes sous contrainte, cette souplesse est un avantage immediat.\n\nDeuxieme axe: la coherence regionale. Ce gain de vitesse peut toutefois produire une perte de synchronisation strategique. Les menaces armees circulent a travers les frontieres, alors que les reponses restent de plus en plus nationalisees. Le risque est l'apparition de 'poches d'asymetrie': des zones ou les forces, doctrines et priorites ne s'alignent plus suffisamment pour maintenir une pression continue.\n\nTroisieme axe: l'economie politique de la securite. La bilateralisation redistribue les dependances. Au lieu d'une architecture uniforme, on observe une mosaïque de partenariats, chacun avec ses conditionnalites explicites ou implicites. Cela peut accelerer certains programmes capacitaires, mais aussi compliquer l'interoperabilite et la planification long terme.\n\nQuatrieme axe: legitimite interne et narration strategique. Les gouvernements peuvent valoriser l'autonomie securitaire comme une preuve de souverainete retrouvee. Cette narration renforce la base politique court terme, mais elle doit etre soutenue par des resultats tangibles sur la protection des populations, sinon l'ecart entre discours et realite devient un facteur d'usure institutionnelle.\n\nPerspective 2026-2027: le dilemme ne se resoudra pas par un retour au statu quo anterieur. La trajectoire la plus realiste consiste a combiner autonomie nationale et mecanismes cibles de coordination regionale (renseignement, logistique, poursuite transfrontaliere, harmonisation minimale des priorites). Sans ce socle commun, les gains tactiques resteront fragiles face a des menaces adaptees et transnationales.",
+      "reading_time": "12 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "author": "Redaction VA",
+      "scheduled_at": "2026-05-08",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 23,
+      "rubrique": "Enquete speciale",
+      "title": "Enquete speciale: gouvernance de la CAN, zones d'opacite et mecanismes de controle",
+      "slug": "enquete-speciale-gouvernance-de-la-can-zones-d-opacite-et-mecanismes-de-controle",
+      "excerpt": "Dossier long format sur la gouvernance de la CAN: chronologie, comites, standards disciplinaires et zones d'opacite, avec cadre de verification strict.",
+      "body": "HYPOTHESE D'ENQUETE\nNous n'affirmons pas une culpabilite generale. Nous examinons les zones d'opacite, les conflits d'interets potentiels et les limites de gouvernance dans le football africain.\n\nCHAPITRE 1 - CHRONOLOGIE FACTUELLE (A ETABLIR)\n- Sequence des decisions autour de la finale CAN 2025\n- Instances saisies, dates, bases reglementaires invoquees\n- Divergences entre resultats de terrain et resultats administratifs\n\nCHAPITRE 2 - GOUVERNANCE ET COMITES\n- Qui decide quoi dans la chaine institutionnelle (disciplinaire, appel, exécution)\n- Composition des comites et garanties d'independance\n- Transparence des motivations et publication des decisions\n\nCHAPITRE 3 - RELATIONS CAF / FIFA / UEFA\n- Convergence ou divergence de standards juridiques et disciplinaires\n- Effets d'influence externe sur les doctrines de gouvernance\n- Limites de comparabilite entre systemes institutionnels\n\nCHAPITRE 4 - PASSE CONTROVERSE ET JURISPRUDENCE\n- Cas historiques de contestation en football africain\n- Motifs recurrents: arbitrage, discipline, attribution, execution des decisions\n- Lecons institutionnelles non appliquees\n\nCHAPITRE 5 - DROIT DE REPONSE ET ZONES NON PROUVEES\n- Solliciter CAF, federations, responsables concernes\n- Distinguer faits etablis, allegations, et points en litige\n- Identifier ce qui reste sans preuve documentaire\n\nMETHODE ET GARDE-FOUS\n- Double verification obligatoire avant publication\n- Sources primaires prioritaires (reglements, decisions, communiques)\n- Aucun jugement definitif sans preuve documentee\n- Droit de reponse systematique\n\nCHECKLIST JURIDIQUE AVANT PUBLICATION\n1) chaque allegation est attribuee a une source nommee\n2) chaque fait sensible a 2 sources independantes\n3) les formulations accusatoires sont remplacees par des formulations factuelles\n4) les parties visees ont ete sollicitees\n",
+      "author": "Nael T. Koffi",
+      "reading_time": "14 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-22",
+      "image": null,
+      "sources": [
+        "CAF Online — communiques officiels competitions: https://www.cafonline.com/",
+        "FIFA Governance — standards et cadres institutionnels: https://www.fifa.com/legal/governance",
+        "Tribunal Arbitral du Sport (CAS/TAS) — jurisprudence sportive: https://www.tas-cas.org/"
+      ]
+    },
+    {
+      "id": 24,
+      "rubrique": "Brief",
+      "title": "Brief: Afrique de l'Ouest, diplomatie preventive et signaux de crispation",
+      "slug": "brief-afrique-de-l-ouest-diplomatie-preventive-et-signaux-de-crispation",
+      "excerpt": "Brouillon planifie dans le cadre du calendrier editorial mensuel.",
+      "body": "Contenu a completer selon la note de veille et le filtre qualite.",
+      "author": "Redaction VA",
+      "reading_time": "6 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-25",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 25,
+      "rubrique": "Brief",
+      "title": "Brief: Chaines logistiques strategiques et competition portuaire en Afrique",
+      "slug": "brief-chaines-logistiques-strategiques-et-competition-portuaire-en-afrique",
+      "excerpt": "Brouillon planifie dans le cadre du calendrier editorial mensuel.",
+      "body": "Contenu a completer selon la note de veille et le filtre qualite.",
+      "author": "Redaction VA",
+      "reading_time": "6 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-27",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 26,
+      "rubrique": "Analyse de fond",
+      "title": "Analyse: securite electorale et stabilite institutionnelle en Afrique francophone",
+      "slug": "analyse-securite-electorale-et-stabilite-institutionnelle-en-afrique-francophone",
+      "excerpt": "Brouillon planifie dans le cadre du calendrier editorial mensuel.",
+      "body": "Contenu a completer selon la note de veille et le filtre qualite.",
+      "author": "Redaction VA",
+      "reading_time": "10 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-29",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 27,
+      "rubrique": "Note pays",
+      "title": "Note pays: Tchad, equilibres internes et projection regionale",
+      "slug": "note-pays-tchad-equilibres-internes-et-projection-regionale",
+      "excerpt": "Brouillon planifie dans le cadre du calendrier editorial mensuel.",
+      "body": "Contenu a completer selon la note de veille et le filtre qualite.",
+      "author": "Redaction VA",
+      "reading_time": "10 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-31",
+      "image": null,
+      "sources": [
+        "Union africaine: https://au.int/",
+        "UN News Afrique: https://news.un.org/en/news/region/africa",
+        "Reuters Afrique: https://www.reuters.com/world/africa/"
+      ]
+    },
+    {
+      "id": 28,
+      "rubrique": "Diplomatie",
+      "title": "Brief: Union africaine et puissances exterieures, marges de manoeuvre en 2026",
+      "slug": "brief-union-africaine-et-puissances-exterieures-marges-de-manoeuvre-en-2026",
+      "excerpt": "En 2026, l'enjeu pour l'Union africaine n'est pas seulement de diversifier ses partenariats, mais de preserver une autonomie strategique institutionnelle.",
+      "body": "L'Union africaine evolue dans un environnement ou les partenaires externes multiplient les offres de cooperation, de financement et d'appui securitaire. En 2026, la question centrale n'est plus seulement de choisir des partenaires, mais de maintenir une marge de manoeuvre institutionnelle suffisante face a des agendas concurrents.\n\nPremier constat: la concurrence externe peut renforcer le levier de negociation africain, a condition que les priorites continentales soient formulees de maniere claire et coherente. Sans cap commun, la diversification des partenaires devient une juxtaposition d'accords asymetriques plus qu'une strategie.\n\nDeuxieme constat: les contraintes budgetaires des Etats membres pèsent sur l'autonomie de decision. Quand les besoins de financement d'urgence dominent, la temporalite politique l'emporte souvent sur la coherence institutionnelle de long terme.\n\nTroisieme constat: l'efficacite diplomatique repose sur la capacite de l'UA a articuler trois niveaux: continental, sous-regional et national. Les decalages entre ces niveaux creent des angles morts exploites par les rivalites externes.\n\nPour 2026-2027, la marge de manoeuvre de l'UA dependra de trois variables: alignement des priorites entre Etats membres, qualite des mecanismes de suivi des accords, et capacite a imposer des standards communs de transparence et de redevabilite.\n\nPoint editorial: la bonne question n'est pas 'avec qui s'allier', mais 'dans quelles conditions institutionnelles l'alliance sert les interets strategiques africains'.",
+      "author": "Selene B. Okoro",
+      "reading_time": "7 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-03",
+      "scheduled_at": null,
+      "image": "/static/img/article-ua-couches.png",
+      "publication_request": {
+        "state": "published",
+        "published_at": "2026-05-03",
+        "note": "Publication acceptee par validation utilisateur."
+      },
+      "sources": [
+        "Union africaine — portail institutionnel: https://au.int/",
+        "CEDEAO — communiques regionaux: https://ecowas.int/",
+        "Conseil de securite des Nations unies — dossiers officiels: https://www.un.org/securitycouncil/"
+      ]
+    },
+    {
+      "id": 29,
+      "rubrique": "Note pays",
+      "title": "Note pays: Niger, securite nationale et marge diplomatique en 2026",
+      "slug": "note-pays-niger-securite-nationale-et-marge-diplomatique-en-2026",
+      "excerpt": "Le Niger cherche un nouvel equilibre entre priorite securitaire, stabilite institutionnelle et repositionnement diplomatique regional.",
+      "body": "Le Niger occupe une place charniere dans les recompositions sahéliennes. En 2026, l'Etat combine trois objectifs parfois contradictoires: reprendre l'initiative securitaire sur son territoire, maintenir une capacite d'arbitrage diplomatique et limiter la fragilisation socio-economique.\n\nSur le plan securitaire, la pression reste multi-fronts: menace transfrontaliere, contraintes logistiques et besoin d'interoperabilite avec les voisins. La doctrine privilegie des dispositifs nationaux renforces, appuyes par des partenariats choisis selon une logique de flexibilite operationnelle.\n\nSur le plan diplomatique, le Niger cherche a conserver des marges de manoeuvre dans un contexte de rivalites externes. L'enjeu n'est pas seulement le choix des partenaires, mais la capacite a negocier des appuis compatibles avec les priorites nationales de long terme.\n\nSur le plan institutionnel, la soutenabilite de la trajectoire depend de la coherence entre securite, gouvernance et contraintes budgetaires. Si l'effort de defense absorbe durablement les marges fiscales, la stabilite politique peut etre fragilisee a moyen terme.\n\nScenario prudent 2026-2027: maintien d'une posture securitaire ferme avec diplomatie d'equilibre. Variable critique: qualite de coordination regionale sur les zones frontieres et capacite de l'Etat a produire des resultats visibles pour les populations.",
+      "author": "Meryem R. Fofana",
+      "reading_time": "9 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-03",
+      "scheduled_at": null,
+      "image": "/static/img/article-niger.png",
+      "publication_request": {
+        "state": "published",
+        "checked_at": "2026-05-03",
+        "checks": {
+          "illustration": true,
+          "signature": true,
+          "double_verification": true,
+          "quality_filter": true,
+          "legal_wording_checked": true
+        },
+        "note": "Demande de publication validee en attente du GO final.",
+        "published_at": "2026-05-03"
+      },
+      "sources": [
+        "Nations unies (Niger) — contexte securitaire et humanitaire: https://news.un.org/en/news/region/africa",
+        "Union africaine (Paix et securite): https://au.int/",
+        "ISS Africa — analyses Sahel et Niger: https://issafrica.org/"
+      ]
+    },
+    {
+      "id": 30,
+      "rubrique": "Analyse de fond",
+      "title": "Analyse: minerais critiques africains, souverainete industrielle et rapports de puissance",
+      "slug": "analyse-minerais-critiques-africains-souverainete-industrielle-et-rapports-de-puissance",
+      "excerpt": "La bataille des minerais critiques ne se joue plus uniquement dans l'extraction, mais dans la capacite africaine a capter la valeur industrielle.",
+      "body": "La centralite des minerais critiques place plusieurs Etats africains au coeur des chaines de valeur mondiales. Pourtant, le rapport de puissance ne se mesure pas a la seule detention de ressources: il se mesure a la capacite de transformation, de negotiation contractuelle et de projection industrielle.\n\nPremier niveau: l'extraction. Elle reste la porte d'entree economique, mais elle ne garantit pas une souverainete strategique. Sans maitrise des clauses contractuelles, de la fiscalite et des obligations de contenu local, la rente reste exterieurement captee.\n\nDeuxieme niveau: l'industrialisation. Le vrai changement de rapport de force passe par la transformation locale partielle: raffinage, precurseurs, logistique specialisee, certification. Ce segment determine la part de valeur retenue dans les economies nationales.\n\nTroisieme niveau: la diplomatie economique. Les Etats qui obtiennent de meilleurs termes sont ceux qui articulent politique minière, strategie energetique et partenariats technologiques dans un cadre institutionnel stable.\n\nQuatrieme niveau: le risque geoeconomique. La concurrence entre puissances peut offrir des options de financement, mais aussi multiplier les dependances techniques et normatives. L'enjeu est d'eviter la substitution d'une dependance par une autre.\n\nConclusion strategique: la souverainete miniere africaine de nouvelle generation suppose un triptyque: qualite institutionnelle, politique industrielle selective, et negociation geopolitique disciplinee. Sans ce triptyque, l'avantage geologique reste un levier incomplet.",
+      "author": "Idris M. Keba",
+      "reading_time": "12 min de lecture",
+      "status": "scheduled",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": "2026-05-15",
+      "image": "/static/img/article-minerais.png",
+      "sources": [
+        "Banque africaine de developpement — ressources et industrialisation: https://www.afdb.org/",
+        "Banque mondiale (Afrique) — extraction et developpement: https://www.worldbank.org/en/region/afr",
+        "FMI — stabilite macroeconomique et gouvernance: https://www.imf.org/en/News"
+      ]
+    },
+    {
+      "id": 31,
+      "rubrique": "Renseignement",
+      "title": "Guerre informationnelle en Afrique: la bataille des recits a l'ere numerique",
+      "slug": "guerre-informationnelle-en-afrique-nouveaux-acteurs-nouvelles-doctrines",
+      "excerpt": "Entre souverainete narrative, operations d'influence et bataille des perceptions, l'Afrique fait face a un tournant strategique du champ informationnel.",
+      "body": "A l'heure ou les conflits militaires classiques se doublent de guerres informationnelles, l'Afrique devient un theatre central de competition narrative. Les instruments d'influence ne se limitent plus aux moyens coercitifs: reseaux sociaux, ecosystemes mediatiques, influenceurs, campagnes d'opinion et operations numeriques structurent des rapports de force geopolitique.\n\nDepuis plusieurs annees, les revendications de souverainete politique, economique et informationnelle progressent sur le continent. Cette dynamique se lit dans les debats sur l'autonomie strategique, le controle des ressources, la place des dispositifs militaires exterieurs et l'essor de medias africains plus affirmes.\n\nDans ce contexte, la guerre des narratifs n'est pas un concept abstrait. Elle se manifeste par la vitesse de circulation des recits, la fragmentation des audiences et la concurrence entre agendas exterieurs et priorites nationales. Les operations d'influence peuvent chercher a orienter les perceptions, polariser le debat ou disqualifier des positions politiques concurrentes.\n\nIl faut toutefois maintenir une discipline editoriale stricte: distinguer faits verifies, hypotheses analytiques et allegations non documentees. Toute accusation ciblant une personne, une institution ou un Etat doit reposer sur des preuves solides, recoupees et attribuees.\n\nL'un des enjeux majeurs est la vulnerabilite informationnelle des jeunesses connectees. Sans education aux medias, verification des sources et culture critique, les espaces numeriques deviennent des accelerateurs de desinformation, de conflits symboliques et de manipulation des perceptions collectives.\n\nLa reponse africaine ne peut pas etre seulement defensive. Elle suppose un programme positif: medias credibles, transparence institutionnelle, capacites de fact-checking, cooperation regionale sur les menaces informationnelles transfrontalieres et production de recits strategiques fondes sur des faits.\n\nDonnees de reference (2024): selon le Centre d'etudes strategiques de l'Afrique, 189 campagnes de desinformation ont ete documentees sur le continent, soit environ quatre fois plus qu'en 2022. L'etude indique qu'environ 60% de ces campagnes sont parrainees par des Etats etrangers, et identifie la Russie comme premier commanditaire externe avec 80 campagnes recensees.\n\nConclusion: la souverainete africaine se joue aussi dans la maitrise du champ informationnel. Le debat public, les medias et l'ecosysteme numerique sont devenus des espaces strategiques de premier ordre.",
+      "author": "Nael T. Koffi",
+      "reading_time": "10 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-03",
+      "scheduled_at": null,
+      "sources": [
+        "Africa Center for Strategic Studies — Cartographie regionale de la desinformation en Afrique (2024): https://africacenter.org/wp-content/uploads/2024/05/Cartographie-regionale-de-la-desinformation-en-Afrique-2024.pdf",
+        "Timbuktu Institute — Reseaux sociaux, guerre de l'information et cooperation securitaire: https://timbuktu-institute.org/index.php/publications/item/1090-reseaux-sociaux-guerre-de-l-information-et-cooperation-securitaire",
+        "UN News (Afrique) — information regionale et securite: https://news.un.org/en/news/region/africa",
+        "Auteuil Traduction — Les langues les plus parlees en Afrique: https://www.auteuil-traduction.com/articles/les-langues-les-plus-parlees-en-afrique"
+      ],
+      "publication_request": {
+        "state": "published",
+        "published_at": "2026-05-03"
+      },
+      "image": "/static/img/article-guerre-info-langues.png"
+    },
+    {
+      "id": 32,
+      "rubrique": "Ressources",
+      "title": "Detroit d'Ormuz sous tension: qui gagne, qui perd en Afrique petroliere ?",
+      "slug": "detroit-d-ormuz-sous-tension-qui-gagne-qui-perd-en-afrique-petroliere",
+      "excerpt": "Le risque de blocage d'Ormuz reactualise un choc energetique majeur: certains exportateurs africains y gagnent en recettes, tandis que les importateurs subissent inflation et pression budgetaire.",
+      "body": "La crise autour du detroit d'Ormuz replace la variable energetique au centre des vulnerabilites africaines. Dans un scenario de perturbation prolongee, la hausse du Brent et du kerosene se transmet rapidement aux couts de transport, a l'inflation importee et aux comptes publics.\n\nLe premier mecanisme est logistique: Ormuz concentre une part strategique des flux mondiaux d'hydrocarbures. Meme sans interruption totale, une degradation securitaire augmente les primes de risque, les couts d'assurance maritime et la volatilite des cours.\n\nA court terme, les exportateurs nets africains (petrole/gaz) peuvent enregistrer une amelioration des recettes exterieures et fiscales. Mais cet avantage est conditionnel: contraintes de production, besoins de subventions interieures et rigidites budgetaires peuvent en limiter le benefice reel.\n\nEn face, les importateurs nets absorbent un choc plus direct. Hausse des factures energetiques, tensions sur la balance des paiements, depreciation de change et rencherissement des denrees transportees forment un canal de transmission macroeconomique classique.\n\nLe secteur aerien est l'un des plus exposes. Le kerosene represente une composante majeure des couts d'exploitation: lorsque les prix montent rapidement, les compagnies locales ajustent les tarifs, reduisent les frequences ou reportent des investissements.\n\nLes donnees statistiques doivent etre lues en couches: (1) prix internationaux, (2) structure import/export par pays, (3) pass-through inflationniste local, (4) elasticite sociale et budgetaire. Cette approche permet de distinguer les gagnants comptables des gagnants economiques reels.\n\nTrois scenarios se dessinent sur 30-90 jours: de-escalade rapide, tension persistante, ou perturbation severe. La priorite de politique publique reste identique: securiser les approvisionnements, proteger les secteurs sensibles (transport, alimentation, sante), et cibler les mesures de soutien pour eviter des subventions generalisees peu efficaces.\n\nConclusion: le choc Ormuz agit comme test de resilience energetique africaine. Il peut renforcer des marges budgetaires dans certains Etats producteurs, mais il fragilise largement les importateurs et les chaines logistiques continentales.",
+      "author": "Nael T. Koffi",
+      "reading_time": "11 min de lecture",
+      "status": "draft",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": null,
+      "sources": [
+        "Rexecode — Le spectre d'un choc petrolier hante les marches: https://www.rexecode.fr/conjoncture-previsions/synthese-conjoncturelle-hebdo/le-spectre-d-un-choc-petrolier-hante-les-marches-alors-que-l-issue-du-conflit-iranien-s-eloigne",
+        "Zonebourse — Crise du kerosene et effets sur les acteurs nigerians: https://www.zonebourse.com/actualite-bourse/crise-du-kerosene-une-aubaine-pour-le-nigerian-dangote-mais-pas-pour-les-compagnies-locales-ce7f59dcdc8dff27",
+        "TV5Monde — Crise d'Ormuz et impacts en Afrique: https://information.tv5monde.com/afrique/la-crise-du-detroit-dormuz-et-la-flambee-des-prix-du-petrole-desorganise-lacheminement-de-laide-humanitaire-sur-le-continent-africain-2819977",
+        "EIA — World Oil Transit Chokepoints (Strait of Hormuz): https://www.eia.gov/international/analysis/special-topics/World_Oil_Transit_Chokepoints",
+        "IATA — Jet Fuel Price Monitor: https://www.iata.org/en/publications/economics/fuel-monitor/"
+      ],
+      "publication_request": {
+        "state": "draft"
+      },
+      "image": "/static/img/article-ormuz-v1.png"
+    },
+    {
+      "id": 33,
+      "rubrique": "Culture",
+      "title": "Langues africaines et souverainete narrative: reequilibrer le pouvoir mediatique",
+      "slug": "langues-africaines-et-souverainete-narrative-reequilibrer-le-pouvoir-mediatique",
+      "excerpt": "La question linguistique n'est pas un sujet culturel secondaire: elle conditionne l'acces au debat public, la qualite de l'information et la capacite de projection narrative du continent.",
+      "body": "Dans l'economie politique de l'information, la langue est un instrument de pouvoir. En Afrique, la bataille narrative ne se joue pas uniquement sur les plateformes numeriques, les audiences ou les formats mediatiques. Elle se joue aussi dans le choix des langues qui produisent, organisent et legitimisent le debat public.\n\nPendant longtemps, l'espace mediatique institutionnel est reste domine par les langues heritees de l'histoire coloniale, en particulier le francais, l'anglais et le portugais. Ces langues demeurent indispensables pour la diplomatie et la circulation internationale des idees. Mais leur exclusivite cree une distance avec une partie des publics locaux et limite l'appropriation citoyenne des enjeux geopolitiques.\n\nPremier enjeu: l'acces reel a l'information. Quand une part importante de la population comprend mieux les contenus dans des langues africaines, l'absence d'analyses strategiques dans ces langues produit une inegalite cognitive. Les citoyens disposent de moins d'outils pour arbitrer des choix politiques, economiques et institutionnels.\n\nDeuxieme enjeu: la legitimite du recit. Une politique mediatique qui ignore les langues africaines laisse plus d'espace a des circuits informels peu verifies. A l'inverse, la production d'informations fiables en langues locales peut renforcer la confiance publique, stabiliser le debat et reduire l'impact des campagnes de desinformation.\n\nTroisieme enjeu: la puissance culturelle. La souverainete narrative n'oppose pas automatiquement langues internationales et langues africaines. Elle repose sur un bilinguisme strategique: conserver les langues de projection externe et renforcer les langues africaines pour la cohesion interne, la transmission culturelle et la participation democratique.\n\nDans cette perspective, les medias africains peuvent structurer des formats multilingues, professionnaliser la traduction journalistique, appliquer des standards de verification identiques quelle que soit la langue, et construire des ponts narratifs entre publics nationaux, regionaux et diasporiques.\n\nConclusion: la souverainete informationnelle africaine passe aussi par une politique linguistique mediatique assumee. Une Afrique qui parle davantage dans ses langues definit mieux ses interets, defend mieux ses positions et projette mieux ses recits dans le monde.",
+      "author": "Jonas E. Makena",
+      "reading_time": "8 min de lecture",
+      "status": "published",
+      "is_featured": 1,
+      "published_at": "2026-05-04",
+      "scheduled_at": null,
+      "image": "/static/img/article-langues-v2.png",
+      "sources": [
+        "OpenEdition — Ctd/423: https://journals.openedition.org/ctd/423",
+        "DUMAS-CNRS — dumas-03635780v1: https://dumas.ccsd.cnrs.fr/dumas-03635780v1/document",
+        "ResearchGate — Langues et medias en Afrique noire francophone: https://www.researchgate.net/publication/345268882_Langues_et_medias_en_Afrique_noire_francophone"
+      ],
+      "publication_request": {
+        "state": "draft"
+      }
+    },
+    {
+      "id": 34,
+      "rubrique": "Dossier special Mali",
+      "country": "Mali",
+      "theme": "Securite",
+      "title": "Dossier special Mali: situation au 4 mai 2026, entre choc securitaire et pression politique",
+      "slug": "dossier-special-mali-situation-au-4-mai-2026-entre-choc-securitaire-et-pression-politique",
+      "excerpt": "Apres les attaques coordonnees de fin avril, le Mali entre dans une phase de forte tension: securite, gouvernance et crise humanitaire se superposent.",
+      "body": "Au 4 mai 2026, la situation malienne est marquee par une acceleration des risques sur trois fronts: securitaire, politique et humanitaire.\n\nSur le front securitaire, la sequence ouverte fin avril a change l'echelle du conflit. Des attaques coordonnees revendiquees par le JNIM et des groupes allies ont vise plusieurs positions, y compris autour de Bamako et de Kati. Les autorites maliennes ont repondu par des operations de ratissage et par l'ouverture d'enquetes sur de possibles complicités internes au sein de l'appareil militaire.\n\nSur le front politique, l'espace public reste sous pression. Des cas recents d'interpellations et de disparitions signalees de figures critiques alimentent un climat de crispation institutionnelle. Cette dynamique renforce le cout politique de la gestion exclusivement securitaire de la crise.\n\nSur le front humanitaire, les indicateurs restent tres fragiles. Les deplacements de populations se poursuivent, l'acces aux services essentiels est degrade dans plusieurs zones, et certaines operations d'assistance ont ete ponctuellement perturbees par le contexte securitaire.\n\nLecture strategique: le dossier malien ne se reduit pas a une seule question contre-terroriste. Il combine la capacite de l'Etat a proteger les centres urbains, la qualite de ses arbitrages politiques internes, et la resilience logistique face aux besoins civils.\n\nA court terme (30 jours), le scenario central est celui d'une volatilite elevee: operations securitaires intenses, risque d'incidents majeurs et pression continue sur les corridors de ravitaillement.\n\nA moyen terme (90 jours), la variable decisive sera la capacite de coordination regionale et la reouverture d'espaces politiques credibles, sans quoi le cout humain et economique pourrait encore augmenter.\n\nPoints de suivi quotidien pour ce dossier special Mali:\n- evolution des attaques et zones de pression autour des axes strategiques;\n- decisions judiciaires et militaires sur les complicités internes alleguees;\n- niveau d'acces humanitaire et reprise effective des operations de terrain;\n- signaux politiques sur l'ouverture, la mediation ou l'escalade.",
+      "author": "Nael T. Koffi",
+      "reading_time": "9 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-04",
+      "scheduled_at": null,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bamako%20at%20Night%20(45407846292).jpg",
+      "country_motto": "Un Peuple - Un But - Une Foi",
+      "subtitle_credit": "Sous-titrage: Société Radio-Canada",
+      "sources": [
+        "Reuters (via Investing) — coordinated attacks and military investigation in Mali (25 Apr / 2 May 2026): https://www.investing.com/news/commodities-news/mali-army-bases-hit-in-largescale-attacks-claimed-by-al-qaedalinked-militants-4637391 ; https://www.investing.com/news/world-news/mali-investigates-soldiers-over-role-in-coordinated-insurgent-attacks-4654760",
+        "UN Secretary-General Spokesperson statement on Mali (25 Apr 2026): https://www.un.org/sg/en/content/sg/statements/2026-04-25/statement-attributable-the-spokesperson-for-the-secretary-general-mali",
+        "UN Geneva / independent expert update on Mali (26 Mar 2026): https://www.ungeneva.org/fr/news-media/news/2026/03/117113/violence-et-derive-autoritaire-aggravent-la-crise-au-mali",
+        "WFP Mali country update (29 Apr 2026): https://www.wfp.org/countries/mali",
+        "UNFPA Mali situation report (Feb 2026, published Mar 2026): https://www.unfpa.org/resources/unfpa-situation-report-mali-february-2026",
+        "AP — reported abduction of former minister and junta critic in Bamako (May 2026): https://apnews.com/article/3d459f971e35e8335aa74dc22ca8c11a"
+      ],
+      "publication_request": {
+        "state": "draft"
+      },
+      "image_credit": "Photo: Mark Fischer / Wikimedia Commons (CC BY-SA 2.0)"
+    },
+    {
+      "id": 35,
+      "rubrique": "Afrique du Sud",
+      "country": "Afrique du Sud",
+      "theme": "Societe / Migration",
+      "title": "Afrique du Sud: flambée xénophobe, pression sociale et crise de gouvernance migratoire",
+      "slug": "afrique-du-sud-flambee-xenophobe-pression-sociale-et-crise-de-gouvernance-migratoire",
+      "excerpt": "Entre violences contre migrants, tensions diplomatiques avec Abuja et chômage de masse, l'Afrique du Sud fait face à un test politique majeur à l'approche des échéances locales.",
+      "body": "Une nouvelle séquence de violences xénophobes en Afrique du Sud relance un débat ancien sur l'immigration, l'emploi et la responsabilité politique. Selon plusieurs sources médiatiques africaines et internationales citées dans ce dossier, des agressions visant des ressortissants africains se sont multipliées ces dernières semaines, notamment dans des zones urbaines du Gauteng, du KwaZulu-Natal et du Cap.\n\nSur le plan diplomatique, la tension est montée d'un cran avec l'annonce de la convocation de l'ambassadeur sud-africain à Abuja par les autorités nigérianes. Ce signal traduit un risque de régionalisation politique du sujet migratoire, au-delà du seul débat intérieur sud-africain.\n\nLes témoignages relayés dans la presse indiquent que des commerçants nigérians, ghanéens et éthiopiens ont réduit leurs horaires ou fermé temporairement par crainte d'attaques. Il faut toutefois distinguer les faits consolidés, les récits locaux et les séquences amplifiées sur les réseaux sociaux: la vérification croisée reste obligatoire avant toute conclusion définitive.\n\nLe nœud du problème est structurel. L'Afrique du Sud combine chômage élevé, inégalités persistantes et frustration sociale dans l'accès au logement, à l'éducation et aux services publics. Dans ce contexte, les migrants deviennent régulièrement des boucs émissaires politiques et sociaux.\n\nPlusieurs voix de la société civile sud-africaine rappellent un principe central: la crise n'est pas causée par les personnes migrantes mais par les défaillances de gouvernance et de redistribution. Cette ligne d'analyse réactive aussi la mémoire historique d'une Afrique du Sud dont une partie de la population avait trouvé refuge ailleurs sur le continent durant l'apartheid.\n\nÀ court terme, le risque principal est une spirale violences–représailles–polarisation, renforcée à l'approche des échéances électorales locales. À moyen terme, l'enjeu devient institutionnel: sans stratégie crédible de sécurité de proximité, de justice rapide et de gestion migratoire transparente, la défiance pourrait s'installer durablement.\n\nScénario de vigilance: si les autorités tardent à produire des réponses visibles (protection des personnes, poursuites judiciaires, communication publique claire), le coût diplomatique pour Pretoria et la cohésion régionale pourrait augmenter.\n\nMots-clés de suivi (#VA): #AfriqueDuSud #Migration #Xenophobie #Nigeria #DiplomatieAfricaine #Gouvernance #SecuriteUrbaine #CohesionSociale",
+      "author": "Nael T. Koffi",
+      "reading_time": "8 min de lecture",
+      "status": "draft",
+      "is_featured": 0,
+      "published_at": null,
+      "scheduled_at": null,
+      "image": "https://source.unsplash.com/1600x900/?johannesburg,south-africa,city",
+      "tags": [
+        "#AfriqueDuSud",
+        "#Migration",
+        "#Xenophobie",
+        "#Nigeria",
+        "#DiplomatieAfricaine",
+        "#Gouvernance",
+        "#SecuriteUrbaine",
+        "#CohesionSociale"
+      ],
+      "keywords": [
+        "Afrique du Sud",
+        "attaques xénophobes",
+        "migrants africains",
+        "Abuja",
+        "chômage",
+        "élections locales"
+      ],
+      "sources": [
+        "BBC News — South Africa country profile / migration context: https://www.bbc.com/news/world-africa-14094918",
+        "Daily Maverick — coverage on xenophobia and local politics: https://www.dailymaverick.co.za/",
+        "UN News — regional human rights and protection updates: https://news.un.org/en/news/region/africa",
+        "Newsroom Africa (broadcast references in user-provided material): https://www.newzroomafrika.tv/",
+        "Vanguard Nigeria — reporting references on attacks and community fear: https://www.vanguardngr.com/"
+      ],
+      "publication_request": {
+        "state": "draft"
+      },
+      "image_credit": "Photo web (Unsplash)"
+    },
+    {
+      "id": 36,
+      "rubrique": "Lifestyle",
+      "country": "Maroc",
+      "theme": "Lifestyle",
+      "title": "Maroc lifestyle: villes, creation et art de vivre, les nouveaux marqueurs d'influence",
+      "slug": "maroc-lifestyle-villes-creation-et-art-de-vivre-les-nouveaux-marqueurs-d-influence",
+      "excerpt": "De Casablanca a Marrakech, le lifestyle marocain devient un levier d'attractivite economique et culturelle a l'echelle africaine et mediterraneenne.",
+      "body": "Le Maroc consolide une trajectoire lifestyle qui depasse le tourisme classique. Entre gastronomie, design, mode, artisanat premium et scene culturelle urbaine, l'art de vivre marocain se transforme en actif d'influence economique.\n\nCette dynamique repose sur un couple villes-marques. Casablanca renforce son positionnement business-creatif, Marrakech capte les flux internationaux a forte valeur, tandis que Rabat et Tanger multiplient les ponts entre culture, innovation et hospitalite.\n\nDans ce modele, le lifestyle n'est pas un simple decor: il structure une chaine de valeur complete, de l'hebergement a la restauration, des evenements a la creation locale. Cela soutient l'emploi de services, attire des investissements et renforce la projection du pays dans les industries culturelles.\n\nLe principal enjeu reste l'equilibre: garder l'authenticite sociale et culturelle tout en montant en gamme. Sans inclusion territoriale et sans qualite de service durable, la croissance lifestyle peut se concentrer sur quelques enclaves.\n\nScenario 2026: le Maroc peut consolider un avantage comparatif regional si la strategie combine formation, qualite urbaine, mobilite et soutien aux creatifs locaux.\n\nMots-clés / Hashtags\n#Maroc #Lifestyle #Casablanca #Marrakech #IndustriesCulturelles #TourismeDeQualite #Attractivite",
+      "author": "Nael T. Koffi",
+      "reading_time": "7 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-04",
+      "scheduled_at": null,
+      "image": "https://source.unsplash.com/1600x900/?morocco,marrakech,lifestyle",
+      "tags": [
+        "#Maroc",
+        "#Lifestyle",
+        "#Casablanca",
+        "#Marrakech",
+        "#IndustriesCulturelles",
+        "#TourismeDeQualite",
+        "#Attractivite"
+      ],
+      "keywords": [
+        "Maroc",
+        "lifestyle",
+        "Casablanca",
+        "Marrakech",
+        "art de vivre"
+      ],
+      "sources": [
+        "UN Tourism barometer data: https://www.unwto.org/un-tourism-world-tourism-barometer-data",
+        "UN Tourism Morocco investment/innovation update: https://www.unwto.org/news/un-tourism-in-morocco-driving-investments-and-celebrating-innovation-in-africa-s-most-visited-destination",
+        "World Bank Morocco overview: https://www.worldbank.org/en/country/morocco/overview"
+      ],
+      "publication_request": {
+        "state": "published",
+        "published_at": "2026-05-04"
+      },
+      "image_credit": "Photo web (Unsplash)"
+    },
+    {
+      "id": 37,
+      "rubrique": "Tech",
+      "country": "Kenya",
+      "theme": "Tech",
+      "title": "Kenya tech: Nairobi confirme son role de pole numerique de reference en Afrique",
+      "slug": "kenya-tech-nairobi-confirme-son-role-de-pole-numerique-de-reference-en-afrique",
+      "excerpt": "Entre fintech, mobile money et ecosysteme startup, le Kenya reste l'un des centres les plus structurants de l'innovation africaine.",
+      "body": "Le Kenya confirme en 2026 son statut de place forte tech du continent, avec Nairobi comme centre d'impulsion regional. La profondeur de son ecosysteme numerique repose sur trois piliers: services financiers mobiles, densite entrepreneuriale et capacite d'innovation appliquee aux usages quotidiens.\n\nLa force kenyane tient a l'infrastructure d'usage: paiements numeriques, services mobiles et intermediation plateforme. Cette base permet une diffusion rapide de solutions fintech, logistiques, e-commerce et civic-tech.\n\nDeuxieme avantage: l'ecosysteme startup. Incubateurs, investisseurs, talents techniques et marche regional creent un effet d'entrainement que peu de capitales africaines reunissent avec la meme regularite.\n\nTroisieme facteur: la dimension politique economique. Le numerique est devenu un instrument de competitivite nationale, avec des enjeux de regulation des donnees, de fiscalite digitale et d'inclusion financiere.\n\nLe risque principal reste l'inegalite d'acces: entre zones urbaines et rurales, entre entreprises financees et petites structures non connectees. Le prochain saut qualitatif dependra donc de la capacite a elargir l'inclusion numerique sans freiner l'innovation.\n\nMots-clés / Hashtags\n#Kenya #Nairobi #Tech #Fintech #MobileMoney #StartupAfrica #Innovation #DigitalEconomy",
+      "author": "Nael T. Koffi",
+      "reading_time": "8 min de lecture",
+      "status": "published",
+      "is_featured": 0,
+      "published_at": "2026-05-04",
+      "scheduled_at": null,
+      "image": "https://source.unsplash.com/1600x900/?nairobi,technology,startup",
+      "tags": [
+        "#Kenya",
+        "#Nairobi",
+        "#Tech",
+        "#Fintech",
+        "#MobileMoney",
+        "#StartupAfrica",
+        "#Innovation",
+        "#DigitalEconomy"
+      ],
+      "keywords": [
+        "Kenya",
+        "Nairobi",
+        "tech",
+        "fintech",
+        "innovation"
+      ],
+      "sources": [
+        "World Bank Kenya overview: https://www.worldbank.org/en/country/kenya/overview",
+        "GSMA mobile industry resources: https://www.gsma.com/mobileeconomy/",
+        "Kenya National Bureau of Statistics: https://www.knbs.or.ke/"
+      ],
+      "publication_request": {
+        "state": "published",
+        "published_at": "2026-05-04"
+      },
+      "image_credit": "Photo web (Unsplash)"
     }
   ],
   "signals": [

@@ -1,92 +1,89 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title }} | Valeurs Africaines{% endblock %}
-{% block meta_description %}{{ article.excerpt }}{% endblock %}
-{% block extra_head %}
-<meta property="og:type" content="article">
-<meta property="og:title" content="{{ article.title }}">
-<meta property="og:description" content="{{ article.excerpt }}">
-<meta property="og:url" content="{{ request.url }}">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ article.title }}">
-<meta name="twitter:description" content="{{ article.excerpt }}">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "headline": "{{ article.title }}",
-  "description": "{{ article.excerpt }}",
-  "author": {"@type": "Person", "name": "{{ article.author }}"},
-  "datePublished": "{{ article.published_at }}",
-  "publisher": {"@type": "Organization", "name": "Valeurs Africaines"}
-}
-</script>
-{% endblock %}
 {% block content %}
 <section class="section">
-  <div class="container narrow" style="max-width:720px;margin:0 auto;padding:0 20px;">
-
-    <p style="margin-bottom:0.5rem;">
-      <a href="{{ url_for('main.articles') }}" style="color:var(--red);text-decoration:none;font-size:0.9rem;">&larr; Tous les articles</a>
-    </p>
-
-    <p class="rubrique-label" style="margin-top:1.5rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;font-size:0.85rem;">{{ article.rubrique }}</p>
-
-    <h1 style="font-size:1.8rem;line-height:1.2;margin:0.5rem 0 1rem;">{{ article.title }}</h1>
-
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1rem;">
-      <span>Par <strong>{{ article.author }}</strong></span>
-      <span>{{ article.published_at }}</span>
-      <span>{{ article.reading_time }}</span>
-    </div>
-
-    <p style="font-size:1.1rem;line-height:1.6;color:var(--ink);font-style:italic;margin-bottom:1.5rem;padding-left:1rem;border-left:3px solid var(--red);">
-      {{ article.excerpt }}
-    </p>
-
-    <div style="line-height:1.8;font-size:1rem;">
-      {% for paragraph in article.body.split('\n') %}
-        {% if paragraph.strip() %}
-          <p style="margin-bottom:1rem;">{{ paragraph }}</p>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    {% if article.tags %}
-    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);">
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Mots-cles :</p>
-      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-        {% for tag in article.tags %}
-          <span style="background:var(--line);padding:0.2rem 0.6rem;border-radius:3px;font-size:0.8rem;">{{ tag }}</span>
-        {% endfor %}
-      </div>
-    </div>
+  <div class="container article-full">
+    <p class="rubrique-label">{{ article.rubrique }}</p>
+    <h1>{{ article.title }}</h1>
+    {% if article.country == "Mali" %}
+    <p class="country-motto-line">🇲🇱 {{ article.country_motto or "Un Peuple - Un But - Une Foi" }}</p>
     {% endif %}
-
-    {% if article.sources %}
-    <details style="margin-top:1.5rem;border:1px solid var(--line);border-radius:4px;padding:0.8rem 1rem;">
-      <summary style="cursor:pointer;font-weight:bold;font-size:0.9rem;">Sources ({{ article.sources|length }})</summary>
-      <ol style="margin-top:0.8rem;padding-left:1.2rem;">
-      {% for src in article.sources %}
-        <li style="margin-bottom:0.4rem;font-size:0.85rem;"><a href="{{ src }}" target="_blank" rel="noopener" style="color:var(--red);">{{ src }}</a></li>
-      {% endfor %}
-      </ol>
-    </details>
+    {% if article.subtitle_credit %}
+    <p class="subtitle-credit">{{ article.subtitle_credit }}</p>
     {% endif %}
+    <p class="meta">Par {{ article.author or "Redaction VA" }} • {{ article.published_at or article.scheduled_at }} • {{ article.reading_time }}</p>
+    {% if article.image %}<img class="article-hero-img" src="{{ article.image }}" alt="Illustration article">{% endif %}
+    <p>{{ article.excerpt }}</p>
+    <hr>
+    {% for paragraph in article.body.split('\n\n') %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
 
-    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);text-align:center;">
-      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem;">Partager cet article :</p>
-      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://twitter.com/intent/tweet?text={{ article.title }}&url={{ request.url }}" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Twitter</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}" target="_blank" rel="noopener" style="background:#0A66C2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">LinkedIn</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}" target="_blank" rel="noopener" style="background:#1877F2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Facebook</a>
-        <a href="mailto:?subject={{ article.title }}&body={{ request.url }}" style="background:var(--muted);color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Email</a>
+    {% if article.slug == "guerre-informationnelle-en-afrique-nouveaux-acteurs-nouvelles-doctrines" %}
+    <section class="article-viz">
+      <h2>Schema d'influence informationnelle</h2>
+      <div class="viz-diagram">
+        <div class="node state">Etats exterieurs</div>
+        <div class="arrow">→</div>
+        <div class="node ops">Operations info</div>
+        <div class="arrow">→</div>
+        <div class="node social">Reseaux sociaux</div>
+        <div class="arrow">→</div>
+        <div class="node impact">Opinion publique</div>
       </div>
-    </div>
-
-    <p style="margin-top:2rem;text-align:center;">
-      <a href="{{ url_for('main.articles') }}" style="color:var(--red);text-decoration:none;">&larr; Retour a la liste des articles</a>
-    </p>
-
+      <h2>Courbe de pression informationnelle (indice indicatif)</h2>
+      <svg class="viz-chart" viewBox="0 0 760 260" role="img" aria-label="Courbe de pression informationnelle 2022 a 2026">
+        <line x1="56" y1="220" x2="736" y2="220" class="axis"/>
+        <line x1="56" y1="30" x2="56" y2="220" class="axis"/>
+        <polyline points="56,188 196,164 336,124 476,90 616,72 736,58" class="curve"/>
+        <circle cx="56" cy="188" r="4"/><circle cx="196" cy="164" r="4"/><circle cx="336" cy="124" r="4"/>
+        <circle cx="476" cy="90" r="4"/><circle cx="616" cy="72" r="4"/><circle cx="736" cy="58" r="4"/>
+        <text x="56" y="244">2022</text><text x="196" y="244">2023</text><text x="336" y="244">2024</text>
+        <text x="476" y="244">2025</text><text x="616" y="244">2026</text><text x="680" y="20">Indice</text>
+      </svg>
+    </section>
+    {% elif article.slug == "detroit-d-ormuz-sous-tension-qui-gagne-qui-perd-en-afrique-petroliere" %}
+    <section class="article-viz">
+      <h2>Chiffres cles</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card"><strong>+X%</strong><span>Variation Brent en phase de tension</span></div>
+        <div class="kpi-card"><strong>20%</strong><span>Part approximative des flux mondiaux via Ormuz</span></div>
+        <div class="kpi-card"><strong>2 vitesses</strong><span>Producteurs nets vs importateurs nets</span></div>
+        <div class="kpi-card"><strong>J+30/J+90</strong><span>Fenetre critique de transmission macro</span></div>
+      </div>
+      <h2>Schema de transmission du choc</h2>
+      <div class="viz-diagram">
+        <div class="node state">Tension Ormuz</div>
+        <div class="arrow">→</div>
+        <div class="node ops">Prix Brent</div>
+        <div class="arrow">→</div>
+        <div class="node social">Kerosene & fret</div>
+        <div class="arrow">→</div>
+        <div class="node impact">Inflation & budgets</div>
+      </div>
+      <h2>Courbe indicative: prix energie et pression inflationniste</h2>
+      <svg class="viz-chart" viewBox="0 0 760 260" role="img" aria-label="Courbe indicative de tension energetique">
+        <line x1="56" y1="220" x2="736" y2="220" class="axis"/>
+        <line x1="56" y1="30" x2="56" y2="220" class="axis"/>
+        <polyline points="56,176 176,168 296,142 416,112 536,86 656,72 736,64" class="curve"/>
+        <circle cx="56" cy="176" r="4"/><circle cx="176" cy="168" r="4"/><circle cx="296" cy="142" r="4"/>
+        <circle cx="416" cy="112" r="4"/><circle cx="536" cy="86" r="4"/><circle cx="656" cy="72" r="4"/><circle cx="736" cy="64" r="4"/>
+        <text x="56" y="244">T0</text><text x="176" y="244">S1</text><text x="296" y="244">S2</text>
+        <text x="416" y="244">S3</text><text x="536" y="244">S4</text><text x="656" y="244">S5</text><text x="728" y="244">S6</text>
+        <text x="632" y="20">Indice tension</text>
+      </svg>
+    </section>
+    {% endif %}
   </div>
+  {% if article.sources %}
+  <section class="article-sources">
+    <h2>Sources</h2>
+    <ul>
+      {% for s in article.sources %}<li>{{ s }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 </section>
 {% endblock %}
+
+
