@@ -1,10 +1,37 @@
-<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#f8f8f8"/>
-  <rect x="20" y="20" width="560" height="260" rx="8" fill="none" stroke="#dddddd" stroke-width="1"/>
-  <circle cx="300" cy="100" r="40" fill="#e30613" opacity="0.15"/>
-  <text x="300" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#e30613" opacity="0.3" font-weight="bold">VA</text>
-  <text x="300" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#5e5e5e" font-weight="bold">Maroc Lifestyle</text>
-<text x="300" y="95" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#5e5e5e" font-weight="bold">Art de vivre</text>
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1428"/><stop offset="100%" stop-color="#2a1a3e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
 
-  <text x="300" y="250" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#cccccc">Valeurs Africaines — Illustration editoriale</text>
+  <text x="40" y="55" fill="#ffffff" font-family="Georgia,serif" font-size="24" font-weight="bold">Maroc Lifestyle</text>
+  <text x="40" y="80" fill="#e30613" font-family="Georgia,serif" font-size="16">Villes, creation et art de vivre</text>
+
+  <!-- Motifs decoratifs -->
+  <rect x="550" y="100" width="200" height="200" rx="100" fill="none" stroke="#e30613" stroke-width="0.5" opacity="0.15"/>
+  <path d="M600,140 L650,200 L630,280 L570,280 L550,200 Z" fill="none" stroke="#e30613" stroke-width="1" opacity="0.2"/>
+  <text x="600" y="215" text-anchor="middle" fill="#ccc" font-size="12" opacity="0.5">Marrakech</text>
+
+  <rect x="40" y="120" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+  <text x="60" y="148" fill="#e30613" font-size="26" font-weight="bold">17,5&</text>
+  <text x="105" y="148" fill="#ccc" font-size="12">millions de touristes (2025)</text>
+  <text x="60" y="170" fill="#999" font-size="11">Record historique</text>
+
+  <rect x="40" y="200" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+  <text x="60" y="228" fill="#e30613" font-size="26" font-weight="bold">6</text>
+  <text x="85" y="228" fill="#ccc" font-size="12">villes imperiales</text>
+  <text x="60" y="250" fill="#999" font-size="11">Fes, Marrakech, Meknes, Rabat...</text>
+
+  <rect x="40" y="280" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+  <text x="60" y="308" fill="#e30613" font-size="26" font-weight="bold">#1</text>
+  <text x="90" y="308" fill="#ccc" font-size="12">classement FDI 2025</text>
+  <text x="60" y="330" fill="#999" font-size="11">Pole creatif africain</text>
+
+  <!-- Elements decoratifs -->
+  <circle cx="700" cy="350" r="40" fill="none" stroke="#e30613" stroke-width="0.5" opacity="0.1"/>
+  <circle cx="680" cy="370" r="20" fill="none" stroke="#e30613" stroke-width="0.5" opacity="0.1"/>
+
+  <text x="400" y="430" text-anchor="middle" fill="#555" font-size="11">Valeurs Africaines — Analyse geopolitique</text>
 </svg>
