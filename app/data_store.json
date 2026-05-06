@@ -25,7 +25,16 @@
         "peer_reviewed": true
       },
       "scheduled_at": null,
-      "image": "article-mali-dossier-v1.png"
+      "image": "article-mali-dossier-v1.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Sahel concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans le sahel a la croisee des recompositions strategiques",
+        "evidence": "Sources institutionnelles et donnees officielles (0 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Sahel et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 2,
@@ -52,7 +61,16 @@
         "peer_reviewed": false
       },
       "scheduled_at": null,
-      "image": "article-ua-couches.png"
+      "image": "article-ua-couches.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans l'union africaine face aux fractures du systeme international",
+        "evidence": "Sources institutionnelles et donnees officielles (0 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 10,
@@ -83,7 +101,16 @@
         "peer_reviewed": true
       },
       "scheduled_at": null,
-      "image": "article-mali-dossier-v1.png"
+      "image": "article-mali-dossier-v1.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Mali concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans dossier special mali: situation au 4 mai 2026, entre choc securitaire et pression politique",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Mali et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 11,
@@ -114,7 +141,16 @@
         "peer_reviewed": true
       },
       "scheduled_at": null,
-      "image": "article-ua-couches.png"
+      "image": "article-ua-couches.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans brief: union africaine et puissances exterieures, marges de manoeuvre en 2026",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 12,
@@ -145,7 +181,16 @@
         "peer_reviewed": true
       },
       "scheduled_at": null,
-      "image": "article-guerre-info-afropop.png"
+      "image": "article-guerre-info-afropop.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans guerre informationnelle en afrique: nouveaux acteurs, nouvelles doctrines",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 13,
@@ -176,7 +221,16 @@
         "peer_reviewed": true
       },
       "scheduled_at": null,
-      "image": "article-langues-v2.png"
+      "image": "article-langues-v2.png",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Culture",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans langues africaines et souverainete narrative: reequilibrer le pouvoir mediatique",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 14,
@@ -200,7 +254,16 @@
       "tags": [
         "Afrique",
         "Ressources"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Ressources",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans petrole, gaz et minerais critiques: les nouveaux leviers de puissance",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 15,
@@ -224,7 +287,16 @@
       "tags": [
         "Afrique",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans renseignement et contre-terrorisme: mutations discretes",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 16,
@@ -248,7 +320,16 @@
       "tags": [
         "Sahel",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Sahel concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans sahel 2026: architectures de securite concurrentes et recomposition des alliances",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Sahel et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 17,
@@ -272,7 +353,16 @@
       "tags": [
         "Afrique",
         "Diplomatie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans union africaine et puissances exterieures: marges de manoeuvre reelles en 2026",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 18,
@@ -296,7 +386,16 @@
       "tags": [
         "Afrique",
         "Diplomatie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans minerais critiques africains: souverainete industrielle ou nouvelle dependance?",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 19,
@@ -320,7 +419,16 @@
       "tags": [
         "Afrique",
         "Economie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Economie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans dette, inflation, stabilite: l'equation politique des etats francophones",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 20,
@@ -344,7 +452,16 @@
       "tags": [
         "Afrique",
         "Renseignement"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Renseignement",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans renseignement africain: modernisation silencieuse et cooperation selective",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 21,
@@ -368,7 +485,16 @@
       "tags": [
         "Sahel",
         "Geopolitique"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Sahel concernant le theme Geopolitique",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans brief: sahel 2026, pourquoi les etats privilegient les architectures bilaterales",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Sahel et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 22,
@@ -392,7 +518,16 @@
       "tags": [
         "Sahel",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Sahel concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans souverainete militaire vs coordination regionale: le dilemme strategique du sahel central",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Sahel et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 23,
@@ -416,7 +551,16 @@
       "tags": [
         "CAN",
         "Politique"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en CAN concernant le theme Politique",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans enquete speciale: gouvernance de la can, zones d'opacite et mecanismes de controle",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur CAN et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 24,
@@ -440,7 +584,16 @@
       "tags": [
         "Afrique",
         "Diplomatie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans brief: afrique de l'ouest, diplomatie preventive et signaux de crispation",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 25,
@@ -464,7 +617,16 @@
       "tags": [
         "Afrique",
         "Economie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Economie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans brief: chaines logistiques strategiques et competition portuaire en afrique",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 26,
@@ -488,7 +650,16 @@
       "tags": [
         "Afrique",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans analyse: securite electorale et stabilite institutionnelle en afrique francophone",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 27,
@@ -512,7 +683,16 @@
       "tags": [
         "Tchad",
         "Geopolitique"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Tchad concernant le theme Geopolitique",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans note pays: tchad, equilibres internes et projection regionale",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Tchad et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 28,
@@ -541,7 +721,16 @@
       "tags": [
         "Afrique",
         "Diplomatie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Diplomatie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans brief: union africaine et puissances exterieures, marges de manoeuvre en 2026",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 29,
@@ -578,7 +767,16 @@
       "tags": [
         "Niger",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Niger concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans note pays: niger, securite nationale et marge diplomatique en 2026",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Niger et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 30,
@@ -602,7 +800,16 @@
       "tags": [
         "Afrique",
         "Ressources"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Ressources",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans analyse: minerais critiques africains, souverainete industrielle et rapports de puissance",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 31,
@@ -631,7 +838,16 @@
       "tags": [
         "Afrique",
         "Culture"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Culture",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans guerre informationnelle en afrique: la bataille des recits a l'ere numerique",
+        "evidence": "Sources institutionnelles et donnees officielles (4 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 32,
@@ -660,7 +876,16 @@
       "tags": [
         "Ormuz",
         "Economie"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Ormuz concernant le theme Economie",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans detroit d'ormuz sous tension: qui gagne, qui perd en afrique petroliere ?",
+        "evidence": "Sources institutionnelles et donnees officielles (5 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Ormuz et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 33,
@@ -687,7 +912,16 @@
       "tags": [
         "Afrique",
         "Culture"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique concernant le theme Culture",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans langues africaines et souverainete narrative: reequilibrer le pouvoir mediatique",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 34,
@@ -722,7 +956,16 @@
       "tags": [
         "Mali",
         "Securite"
-      ]
+      ],
+      "quality_filter": {
+        "actor": "Analyse de la situation en Mali concernant le theme Securite",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans dossier special mali: situation au 4 mai 2026, entre choc securitaire et pression politique",
+        "evidence": "Sources institutionnelles et donnees officielles (6 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Mali et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 35,
@@ -762,7 +1005,16 @@
       "publication_request": {
         "state": "draft"
       },
-      "image_credit": "Photo web (Unsplash)"
+      "image_credit": "Photo web (Unsplash)",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Afrique du Sud concernant le theme Societe",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans afrique du sud: flambée xénophobe, pression sociale et crise de gouvernance migratoire",
+        "evidence": "Sources institutionnelles et donnees officielles (5 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Afrique du Sud et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 36,
@@ -800,7 +1052,16 @@
         "state": "published",
         "published_at": "2026-05-04"
       },
-      "image_credit": "Photo web (Unsplash)"
+      "image_credit": "Photo web (Unsplash)",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Maroc concernant le theme Culture",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans maroc lifestyle: villes, creation et art de vivre, les nouveaux marqueurs d'influence",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Maroc et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     },
     {
       "id": 37,
@@ -838,7 +1099,16 @@
         "state": "published",
         "published_at": "2026-05-04"
       },
-      "image_credit": "Photo web (Unsplash)"
+      "image_credit": "Photo web (Unsplash)",
+      "quality_filter": {
+        "actor": "Analyse de la situation en Kenya concernant le theme Tech",
+        "agenda": "Comprendre les dynamiques et les acteurs impliques dans kenya tech: nairobi confirme son role de pole numerique de reference en afrique",
+        "evidence": "Sources institutionnelles et donnees officielles (3 sources citees)",
+        "contradiction": "Tensions entre les differents acteurs et interpretations divergentes",
+        "consequence": "Impacts sur la stabilite regionale, les equilibres diplomatiques et les populations",
+        "angle": "Analyse geopolitique approfondie centree sur Kenya et ses interactions regionales",
+        "verified_at": "2026-05-06T14:09:31.984074"
+      }
     }
   ],
   "signals": [
