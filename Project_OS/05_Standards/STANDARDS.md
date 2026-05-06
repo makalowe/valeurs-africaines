@@ -1,14 +1,6 @@
-# Standards
+# Standards — Valeurs Africaines
 
-## Produit
-- Une feature = un resultat mesurable
-- Priorite a la simplicite d'usage
-
-## Tech
-- Conventions de nommage stables
-- Tests minimaux sur chemins critiques
-- Pas de dette critique sans ticket
-
-## Execution
-- Pas de sprint sans objectif clair
-- Chaque tache doit avoir un critere de fin
+Grille qualite 6 champs
+25 sources noyau dur
+Procedure publication 9 etapes
+Convention nommage : VA - [Pays] - [Theme]

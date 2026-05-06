@@ -1,15 +1,5 @@
-# Decision Log (ADR)
+# Journal des decisions — Valeurs Africaines
 
-## ADR-001 - Titre
-- Date:
-- Contexte:
-- Decision:
-- Alternatives considerees:
-- Consequences:
+## 2026-05-06
+- Mise en place du Project_OS
 
-## ADR-002 - Titre
-- Date:
-- Contexte:
-- Decision:
-- Alternatives considerees:
-- Consequences:
