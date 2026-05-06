@@ -99,7 +99,7 @@
             {% endif %}
             <article class="headline-card">
                 <div class="thumb">
-                    <img src="{{ article.image or fallback }}" alt="Illustration {{ article.rubrique }}">
+                    <img src="{{ url_for("static", filename="img/" + article.image) if article.image else "" }}" alt="Illustration {{ article.rubrique }}" style="width:100%;height:140px;object-fit:cover;border-radius:4px;">
                     {% if article.country_flag %}
                     <span class="country-flag">{{ article.country_flag }}</span>
                     {% endif %}

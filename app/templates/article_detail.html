@@ -12,7 +12,7 @@
     <p class="subtitle-credit">{{ article.subtitle_credit }}</p>
     {% endif %}
     <p class="meta">Par {{ article.author or "Redaction VA" }} • {{ article.published_at or article.scheduled_at }} • {{ article.reading_time }}</p>
-    {% if article.image %}<img class="article-hero-img" src="{{ article.image }}" alt="Illustration article">{% endif %}
+    {% if article.image %}<img class="article-hero-img" src="{{ url_for('static', filename='img/' + article.image) }}" alt="Illustration {{ article.title }}" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">{% endif %}
     <p>{{ article.excerpt }}</p>
     <hr>
     {% for paragraph in article.body.split('\n\n') %}

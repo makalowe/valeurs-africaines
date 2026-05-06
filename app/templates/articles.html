@@ -5,11 +5,18 @@
     <div class="container narrow">
         <h1>Articles publies</h1>
         {% for row in rows %}
-        <article class="article-list-item">
-            <p class="rubrique-label">{{ row.rubrique }}</p>
-            <h2><a class="headline-link" href="{{ url_for('main.article_detail', slug=row.slug) }}">{{ row.title }}</a></h2>
-            <p>{{ row.excerpt }}</p>
-            <p class="meta">{{ row.published_at }} • {{ row.reading_time }}</p>
+        <article class="article-list-item" style="margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--line);display:flex;gap:1rem;">
+            {% if row.image %}
+            <a href="{{ url_for('main.article_detail', slug=row.slug) }}" style="flex-shrink:0;">
+                <img src="{{ url_for('static', filename='img/' + row.image) }}" alt="" style="width:140px;height:100px;object-fit:cover;border-radius:6px;">
+            </a>
+            {% endif %}
+            <div>
+                <p class="rubrique-label" style="margin-bottom:0.3rem;">{{ row.rubrique }}</p>
+                <h2 style="font-size:1.2rem;margin:0 0 0.4rem;"><a class="headline-link" href="{{ url_for('main.article_detail', slug=row.slug) }}">{{ row.title }}</a></h2>
+                <p style="font-size:0.9rem;color:var(--muted);">{{ row.excerpt[:200] }}{% if row.excerpt|length > 200 %}...{% endif %}</p>
+                <p class="meta" style="font-size:0.8rem;margin-top:0.3rem;">{{ row.published_at or 'A paraitre' }} • {{ row.reading_time }}{% if row.author %} • {{ row.author }}{% endif %}</p>
+            </div>
         </article>
         {% endfor %}
     </div>

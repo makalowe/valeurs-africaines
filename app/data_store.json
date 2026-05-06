@@ -23,7 +23,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": true
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-mali-dossier-v1.png"
     },
     {
       "id": 2,
@@ -48,7 +50,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": false
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-ua-couches.png"
     },
     {
       "id": 10,
@@ -78,7 +82,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": true
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-mali-dossier-v1.png"
     },
     {
       "id": 11,
@@ -108,7 +114,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": true
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-ua-couches.png"
     },
     {
       "id": 12,
@@ -138,7 +146,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": true
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-guerre-info-afropop.png"
     },
     {
       "id": 13,
@@ -168,7 +178,9 @@
         "sources_verified": true,
         "facts_checked": true,
         "peer_reviewed": true
-      }
+      },
+      "scheduled_at": null,
+      "image": "article-langues-v2.png"
     },
     {
       "id": 14,
@@ -183,7 +195,7 @@
       "slug": "petrole-gaz-et-minerais-critiques-les-nouveaux-leviers-de-puissance",
       "author": "Redaction VA",
       "scheduled_at": "2026-05-13",
-      "image": null,
+      "image": "article-minerais.png",
       "sources": [
         "Banque africaine de developpement: https://www.afdb.org/",
         "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
@@ -203,7 +215,7 @@
       "slug": "renseignement-et-contre-terrorisme-mutations-discretes",
       "author": "Redaction VA",
       "scheduled_at": "2026-05-18",
-      "image": null,
+      "image": "",
       "sources": [
         "Union africaine (Paix et securite): https://au.int/",
         "UN Security Council: https://www.un.org/securitycouncil/",
@@ -223,7 +235,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-15",
-      "image": null,
+      "image": "article-mali-dossier-v1.png",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -238,12 +250,12 @@
       "excerpt": "Comment les institutions africaines arbitrent entre partenariats, souverainete et contraintes de financement.",
       "body": "Angle: capacite de negociation continentale face aux agendas concurrentiels (USA, Chine, Europe, Golfe, Russie, Turquie).",
       "reading_time": "9 min de lecture",
-      "status": "scheduled",
+      "status": "published",
       "is_featured": 0,
-      "published_at": null,
+      "published_at": "2026-05-06",
       "author": "Redaction VA",
       "scheduled_at": "2026-05-06",
-      "image": null,
+      "image": "article-ua-couches.png",
       "sources": [
         "Union africaine: https://au.int/",
         "CEDEAO: https://ecowas.int/",
@@ -263,7 +275,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-17",
-      "image": null,
+      "image": "article-minerais.png",
       "sources": [
         "Banque africaine de developpement: https://www.afdb.org/",
         "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
@@ -283,7 +295,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-20",
-      "image": null,
+      "image": "",
       "sources": [
         "Banque africaine de developpement: https://www.afdb.org/",
         "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
@@ -303,7 +315,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-10",
-      "image": null,
+      "image": "",
       "sources": [
         "Africa Center for Strategic Studies: https://africacenter.org/",
         "Timbuktu Institute: https://timbuktu-institute.org/",
@@ -323,7 +335,7 @@
       "published_at": "2026-05-03",
       "author": "Amani K. N'Dala",
       "scheduled_at": null,
-      "image": null,
+      "image": "article-mali-dossier-v1.png",
       "sources": [
         "Union africaine (Paix et securite): https://au.int/",
         "UN Security Council: https://www.un.org/securitycouncil/",
@@ -343,7 +355,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-08",
-      "image": null,
+      "image": "article-mali-dossier-v1.png",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -363,7 +375,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-22",
-      "image": null,
+      "image": "",
       "sources": [
         "CAF Online — communiques officiels competitions: https://www.cafonline.com/",
         "FIFA Governance — standards et cadres institutionnels: https://www.fifa.com/legal/governance",
@@ -383,7 +395,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-25",
-      "image": null,
+      "image": "",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -403,7 +415,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-27",
-      "image": null,
+      "image": "",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -423,7 +435,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-29",
-      "image": null,
+      "image": "",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -443,7 +455,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-31",
-      "image": null,
+      "image": "",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -463,7 +475,7 @@
       "is_featured": 0,
       "published_at": "2026-05-03",
       "scheduled_at": null,
-      "image": "/static/img/article-ua-couches.png",
+      "image": "article-ua-couches.png",
       "publication_request": {
         "state": "published",
         "published_at": "2026-05-03",
@@ -488,7 +500,7 @@
       "is_featured": 0,
       "published_at": "2026-05-03",
       "scheduled_at": null,
-      "image": "/static/img/article-niger.png",
+      "image": "article-niger.png",
       "publication_request": {
         "state": "published",
         "checked_at": "2026-05-03",
@@ -521,7 +533,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-15",
-      "image": "/static/img/article-minerais.png",
+      "image": "article-minerais.png",
       "sources": [
         "Banque africaine de developpement — ressources et industrialisation: https://www.afdb.org/",
         "Banque mondiale (Afrique) — extraction et developpement: https://www.worldbank.org/en/region/afr",
@@ -551,7 +563,7 @@
         "state": "published",
         "published_at": "2026-05-03"
       },
-      "image": "/static/img/article-guerre-info-langues.png"
+      "image": "article-guerre-info-afropop.png"
     },
     {
       "id": 32,
@@ -576,7 +588,7 @@
       "publication_request": {
         "state": "draft"
       },
-      "image": "/static/img/article-ormuz-v1.png"
+      "image": "article-ormuz-afrique-map.png"
     },
     {
       "id": 33,
@@ -591,7 +603,7 @@
       "is_featured": 1,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "/static/img/article-langues-v2.png",
+      "image": "article-langues-v2.png",
       "sources": [
         "OpenEdition — Ctd/423: https://journals.openedition.org/ctd/423",
         "DUMAS-CNRS — dumas-03635780v1: https://dumas.ccsd.cnrs.fr/dumas-03635780v1/document",
@@ -616,7 +628,7 @@
       "is_featured": 0,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bamako%20at%20Night%20(45407846292).jpg",
+      "image": "article-mali-dossier-v1.png",
       "country_motto": "Un Peuple - Un But - Une Foi",
       "subtitle_credit": "Sous-titrage: Société Radio-Canada",
       "sources": [
@@ -647,7 +659,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": null,
-      "image": "https://source.unsplash.com/1600x900/?johannesburg,south-africa,city",
+      "image": "",
       "tags": [
         "#AfriqueDuSud",
         "#Migration",
@@ -693,7 +705,7 @@
       "is_featured": 0,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "https://source.unsplash.com/1600x900/?morocco,marrakech,lifestyle",
+      "image": "",
       "tags": [
         "#Maroc",
         "#Lifestyle",
@@ -736,7 +748,7 @@
       "is_featured": 0,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "https://source.unsplash.com/1600x900/?nairobi,technology,startup",
+      "image": "",
       "tags": [
         "#Kenya",
         "#Nairobi",
