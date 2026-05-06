@@ -215,7 +215,7 @@
       "slug": "renseignement-et-contre-terrorisme-mutations-discretes",
       "author": "Redaction VA",
       "scheduled_at": "2026-05-18",
-      "image": "",
+      "image": "article-renseignement-contre-terrorisme.svg",
       "sources": [
         "Union africaine (Paix et securite): https://au.int/",
         "UN Security Council: https://www.un.org/securitycouncil/",
@@ -295,7 +295,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-20",
-      "image": "",
+      "image": "article-dette-inflation.svg",
       "sources": [
         "Banque africaine de developpement: https://www.afdb.org/",
         "Banque mondiale Afrique: https://www.worldbank.org/en/region/afr",
@@ -315,7 +315,7 @@
       "published_at": null,
       "author": "Redaction VA",
       "scheduled_at": "2026-05-10",
-      "image": "",
+      "image": "article-renseignement-africain.svg",
       "sources": [
         "Africa Center for Strategic Studies: https://africacenter.org/",
         "Timbuktu Institute: https://timbuktu-institute.org/",
@@ -375,7 +375,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-22",
-      "image": "",
+      "image": "article-can-gouvernance.svg",
       "sources": [
         "CAF Online — communiques officiels competitions: https://www.cafonline.com/",
         "FIFA Governance — standards et cadres institutionnels: https://www.fifa.com/legal/governance",
@@ -395,7 +395,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-25",
-      "image": "",
+      "image": "article-afrique-ouest-diplomatie.svg",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -415,7 +415,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-27",
-      "image": "",
+      "image": "article-chaines-logistiques.svg",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -435,7 +435,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-29",
-      "image": "",
+      "image": "article-securite-electorale.svg",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -455,7 +455,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": "2026-05-31",
-      "image": "",
+      "image": "article-tchad.svg",
       "sources": [
         "Union africaine: https://au.int/",
         "UN News Afrique: https://news.un.org/en/news/region/africa",
@@ -659,7 +659,7 @@
       "is_featured": 0,
       "published_at": null,
       "scheduled_at": null,
-      "image": "",
+      "image": "article-afrique-du-sud-xenophobie.svg",
       "tags": [
         "#AfriqueDuSud",
         "#Migration",
@@ -705,7 +705,7 @@
       "is_featured": 0,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "",
+      "image": "article-maroc-lifestyle.svg",
       "tags": [
         "#Maroc",
         "#Lifestyle",
@@ -748,7 +748,7 @@
       "is_featured": 0,
       "published_at": "2026-05-04",
       "scheduled_at": null,
-      "image": "",
+      "image": "article-kenya-tech.svg",
       "tags": [
         "#Kenya",
         "#Nairobi",
