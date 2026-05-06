@@ -9,3 +9,4 @@ __pycache__/
 nul
 *.zip
 _drive-miroir/
+credentials.json
