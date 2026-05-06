@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Accueil | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="masthead">
+    <div class="container masthead-inner">
+        <img class="brand-logo" src="{{ url_for('static', filename='img/logo-va-a.svg') }}" alt="Valeurs Africaines">
+        <blockquote class="mandela-quote">"Je me suis battu contre la domination blanche et je me suis battu contre la domination noire."<cite>Nelson Mandela, Proces de Rivonia (1963)</cite></blockquote>
+    </div>
+</section>
+
+<nav class="main-nav">
+    <div class="container">
+        <div class="main-nav-links">
+            <a href="{{ url_for('main.articles') }}">Articles</a>
+            <a href="{{ url_for('main.rubriques') }}">Rubriques</a>
+            <a href="{{ url_for('main.methodology') }}">Methodologie</a>
+            <a href="{{ url_for('main.newsletter') }}">Newsletter</a>
+            <a href="{{ url_for('main.about') }}">A propos</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-magazine">
+    <div class="container hero-grid">
+        <article class="hero-copy">
+            <p class="kicker">{{ featured.tag }}</p>
+            <h2>{{ featured.title }}</h2>
+            <p>{{ featured.excerpt }}</p>
+            <a class="read-link" href="{{ url_for('main.article_detail', slug=featured.slug) if featured.slug else url_for('main.articles') }}">Lire l'analyse</a>
+        </article>
+        <div class="hero-map">
+            <div class="map-label">Carte strategique - Sahel</div>
+        </div>
+    </div>
+</section>
+
+<section class="headline-row">
+    <div class="container">
+        <h3>A la une</h3>
+        <div class="headline-grid">
+            {% for article in headlines %}
+            <article class="headline-card">
+                <div class="thumb"></div>
+                <p class="rubrique-label">{{ article.rubrique }}</p>
+                <h4><a class="headline-link" href="{{ url_for('main.article_detail', slug=article.slug) }}">{{ article.title }}</a></h4>
+                <p class="meta">{{ article.date }} • {{ article.reading_time }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="newsletter-strip">
+    <div class="container newsletter-inner">
+        <div>
+            <strong>La geopolitique africaine, chaque semaine</strong>
+            <p>Analyses exclusives, decryptages et cartes pour comprendre les rapports de force.</p>
+        </div>
+        <form class="newsletter-cta" method="post" action="{{ url_for('main.newsletter_subscribe') }}">
+            <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

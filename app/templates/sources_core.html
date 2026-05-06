@@ -1,0 +1,453 @@
+{% extends 'base.html' %}
+{% block title %}Sources Noyau Dur | Valeurs Africaines{% endblock %}
+
+{% block content %}
+<div class="sources-container">
+    <div class="sources-header">
+        <h1>📚 Sources Noyau Dur (25 sources)</h1>
+        <p class="sources-subtitle">Références vérifiées pour la veille quotidienne</p>
+        <div class="sources-rules">
+            <strong>Règles:</strong>
+            <ul>
+                <li>Priorité aux sources primaires et institutionnelles</li>
+                <li>Toute info critique doit être recoupée (minimum 2 sources indépendantes)</li>
+                <li>Fiabilité A/A+ : publication directe possible avec vérification</li>
+                <li>Fiabilité B+ : publication après cross-check supplémentaire</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TABLEAU PAR BLOC -->
+    {% for block in blocks %}
+    <div class="sources-section">
+        <h2>{{ block }}</h2>
+        <div class="sources-table-wrapper">
+            <table class="sources-table">
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Pays</th>
+                        <th>Type</th>
+                        <th>Fiabilité</th>
+                        <th>Fréquence</th>
+                        <th>Thèmes</th>
+                        <th>Lien</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set block_sources = sources|selectattr('blocks', 'contains', block)|list %}
+                    {% if block_sources %}
+                        {% for source in block_sources %}
+                        <tr class="reliability-{{ source.reliability.lower().replace('+', 'plus') }}">
+                            <td class="source-name">
+                                <strong>{{ source.name }}</strong>
+                                <span class="source-id">#{{ source.id }}</span>
+                            </td>
+                            <td>{{ source.country }}</td>
+                            <td>
+                                <span class="type-badge {{ source.type }}">{{ source.type|replace('primaire', 'Primaire')|replace('secondaire', 'Secondaire') }}</span>
+                            </td>
+                            <td>
+                                <span class="reliability-badge {{ source.reliability.lower().replace('+', 'plus') }}">{{ source.reliability }}</span>
+                            </td>
+                            <td class="frequency">
+                                <span class="frequency-badge">{{ source.frequency|replace('quotidienne', '📅 Quotidienne')|replace('hebdomadaire', '📆 Hebdo')|replace('mensuelle', '📋 Mensuelle') }}</span>
+                            </td>
+                            <td class="themes">
+                                {% for theme in source.themes %}
+                                <span class="theme-tag">{{ theme }}</span>
+                                {% endfor %}
+                            </td>
+                            <td class="source-link">
+                                <a href="{{ source.url }}" target="_blank" class="btn-link">Visiter →</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td colspan="7" class="no-sources">Aucune source pour {{ block }}</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- CLASSIFICATION INTERNE -->
+    <div class="classification-info">
+        <h2>📊 Classification interne</h2>
+        <div class="classification-grid">
+            <div class="classification-item a-plus">
+                <h4>A+ - Primaire Officielle</h4>
+                <p>Communications gouvernementales, décisions institutionnelles, chiffres officiels</p>
+                <strong>Publication:</strong> Directe + vérification standard
+            </div>
+            <div class="classification-item a">
+                <h4>A - Think Tank/Recherche</h4>
+                <p>Études rigoureuses, analyses par experts, données vérifiées</p>
+                <strong>Publication:</strong> Directe + contexte académique
+            </div>
+            <div class="classification-item b-plus">
+                <h4>B+ - Média Secondaire</h4>
+                <p>Agences de presse, médias reconnus</p>
+                <strong>Publication:</strong> Recoupement 1 source indépendante
+            </div>
+            <div class="classification-item c">
+                <h4>C - Média Généraliste</h4>
+                <p>Couverture générale, sources multiples</p>
+                <strong>Publication:</strong> Vérification + cross-check terrain
+            </div>
+        </div>
+    </div>
+
+    <!-- TUTORIEL UTILISATION -->
+    <div class="tutorial-section">
+        <h2>🎯 Comment utiliser cette liste</h2>
+        <div class="tutorial-steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h4>Matin (30 min)</h4>
+                <p>Scan rapide des 5 sources prioritaires par bloc. Créez signals majeurs.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h4>Midi (30 min)</h4>
+                <p>Creusez 2-3 sources secondaires pour identifier signaux faibles.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h4>Soir (30 min)</h4>
+                <p>Cross-check les signaux avec sources indépendantes. Appliquez filtre qualité.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                <h4>Publication</h4>
+                <p>Article ne peut être publié que si min 3 sources vérifiées + checklist complète.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.sources-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sources-header {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #667eea;
+}
+
+.sources-header h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+.sources-subtitle {
+    margin: 5px 0 15px;
+    color: #666;
+}
+
+.sources-rules {
+    background: #f0f7ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.sources-rules strong {
+    color: #667eea;
+}
+
+.sources-rules ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+.sources-rules li {
+    margin: 4px 0;
+    color: #555;
+}
+
+.sources-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.sources-section h2 {
+    margin: 0 0 15px;
+    font-size: 1.3rem;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.sources-table-wrapper {
+    overflow-x: auto;
+}
+
+.sources-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.sources-table th {
+    background: #f5f5f5;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+.sources-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.sources-table tr:hover {
+    background: #f9f9f9;
+}
+
+.sources-table tr.reliability-aplus {
+    border-left: 3px solid #51cf66;
+}
+
+.sources-table tr.reliability-a {
+    border-left: 3px solid #4c8dff;
+}
+
+.sources-table tr.reliability-bplus {
+    border-left: 3px solid #ffa500;
+}
+
+.sources-table tr.reliability-c {
+    border-left: 3px solid #ff6b6b;
+}
+
+.source-name {
+    font-weight: bold;
+}
+
+.source-id {
+    font-size: 0.8rem;
+    color: #999;
+    margin-left: 8px;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.type-badge.primaire {
+    background: #d3f9d8;
+    color: #2f5233;
+}
+
+.type-badge.secondaire {
+    background: #e7f5ff;
+    color: #1c4995;
+}
+
+.reliability-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.reliability-badge.aplus,
+.reliability-badge.a {
+    background: #d3f9d8;
+    color: #2f5233;
+}
+
+.reliability-badge.bplus {
+    background: #fff3bf;
+    color: #663c00;
+}
+
+.reliability-badge.c {
+    background: #ffe0e0;
+    color: #5a2020;
+}
+
+.frequency-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.themes {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.theme-tag {
+    display: inline-block;
+    background: #e7f5ff;
+    color: #1c4995;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+}
+
+.source-link {
+    text-align: center;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.btn-link:hover {
+    background: #5568d3;
+}
+
+.no-sources {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+.classification-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.classification-info h2 {
+    margin: 0 0 20px;
+}
+
+.classification-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.classification-item {
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #ccc;
+}
+
+.classification-item h4 {
+    margin: 0 0 8px;
+}
+
+.classification-item p {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.classification-item.a-plus {
+    background: #d3f9d8;
+    border-left-color: #51cf66;
+}
+
+.classification-item.a {
+    background: #e7f5ff;
+    border-left-color: #4c8dff;
+}
+
+.classification-item.b-plus {
+    background: #fff3bf;
+    border-left-color: #ffa500;
+}
+
+.classification-item.c {
+    background: #ffe0e0;
+    border-left-color: #ff6b6b;
+}
+
+.tutorial-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.tutorial-section h2 {
+    margin: 0 0 20px;
+}
+
+.tutorial-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.step {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.step h4 {
+    margin: 0 0 8px;
+}
+
+.step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .classification-grid,
+    .tutorial-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .classification-grid,
+    .tutorial-steps {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

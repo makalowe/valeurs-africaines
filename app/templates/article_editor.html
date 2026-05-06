@@ -1,0 +1,669 @@
+{% extends 'base.html' %}
+{% block title %}Éditeur d'Articles | Valeurs Africaines{% endblock %}
+
+{% block content %}
+<div class="editor-container">
+    <div class="editor-header">
+        <h1>Éditeur d'Articles</h1>
+        <p class="editor-subtitle">Format: <strong>{{ article.format if article else 'brief' }}</strong></p>
+    </div>
+
+    <form id="articleForm" method="post" class="article-form">
+        <!-- SECTION MÉTADONNÉES -->
+        <div class="editor-section metadata-section">
+            <h2>📋 Métadonnées</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="title">Titre de l'article *</label>
+                    <input type="text" id="title" name="title" value="{{ article.title if article else '' }}" required 
+                           placeholder="Entrez le titre principal">
+                </div>
+            </div>
+
+            <div class="form-row two-cols">
+                <div class="form-group">
+                    <label for="rubrique">Pilier éditorial *</label>
+                    <select id="rubrique" name="rubrique" required>
+                        <option value="">-- Sélectionner --</option>
+                        {% for pillar in pillars %}
+                        <option value="{{ pillar }}" {% if article and article.rubrique == pillar %}selected{% endif %}>{{ pillar }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="format">Format de contenu *</label>
+                    <select id="format" name="format" required onchange="updateFormatGuidance()">
+                        <option value="">-- Sélectionner --</option>
+                        <option value="article" {% if article and article.format == 'article' %}selected{% endif %}>Analyse longue (2000-4000 mots)</option>
+                        <option value="brief" {% if article and article.format == 'brief' %}selected{% endif %}>Brief hebdo (500-800 mots)</option>
+                        <option value="editorial" {% if article and article.format == 'editorial' %}selected{% endif %}>Éditorial (800-1200 mots)</option>
+                        <option value="interview" {% if article and article.format == 'interview' %}selected{% endif %}>Interview</option>
+                        <option value="data_viz" {% if article and article.format == 'data_viz' %}selected{% endif %}>Chronologie / Data viz</option>
+                        <option value="newsletter" {% if article and article.format == 'newsletter' %}selected{% endif %}>Newsletter</option>
+                    </select>
+                    <p id="formatGuidance" class="format-guidance"></p>
+                </div>
+            </div>
+
+            <div class="form-row two-cols">
+                <div class="form-group">
+                    <label for="author">Auteur / Signature *</label>
+                    <input type="text" id="author" name="author" value="{{ article.author if article else 'VA Desk' }}" required 
+                           placeholder="Nom ou pseudo">
+                </div>
+
+                <div class="form-group">
+                    <label for="reading_time">Temps de lecture *</label>
+                    <input type="text" id="reading_time" name="reading_time" value="{{ article.reading_time if article else '7 min' }}" required 
+                           placeholder="Ex: 7 min">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tags">Tags / Mots-clés</label>
+                    <input type="text" id="tags" name="tags" value="{% if article and article.tags %}{{ article.tags|join(', ') }}{% endif %}" 
+                           placeholder="Séparez par des virgules: Mali, Sécurité, Géopolitique">
+                    <small>Utilisés pour la catégorisation et la recherche</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION CONTENU -->
+        <div class="editor-section content-section">
+            <h2>✍️ Contenu</h2>
+
+            <div class="form-group">
+                <label for="excerpt">Chapô / Résumé *</label>
+                <textarea id="excerpt" name="excerpt" class="excerpt-textarea" required 
+                         placeholder="Résumé d'accroche (300-500 caractères max)">{{ article.excerpt if article else '' }}</textarea>
+                <small id="excerptCount">0 / 500</small>
+            </div>
+
+            <!-- ÉDITEUR WYSIWYG -->
+            <div class="form-group">
+                <label for="body">Corps de l'article *</label>
+                <div id="editor-toolbar" class="wysiwyg-toolbar">
+                    <button type="button" class="toolbar-btn" onclick="formatText('bold')" title="Gras"><b>B</b></button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('italic')" title="Italique"><i>I</i></button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('underline')" title="Souligné"><u>U</u></button>
+                    <span class="toolbar-sep"></span>
+                    <button type="button" class="toolbar-btn" onclick="formatText('insertUnorderedList')" title="Liste">•</button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('insertOrderedList')" title="Liste numérotée">1.</button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('createLink')" title="Lien">🔗</button>
+                    <span class="toolbar-sep"></span>
+                    <button type="button" class="toolbar-btn" onclick="formatText('formatBlock', '<h3>')" title="Titre">H3</button>
+                    <button type="button" class="toolbar-btn" onclick="formatText('formatBlock', '<blockquote>')" title="Citation">"</button>
+                    <span class="toolbar-sep"></span>
+                    <button type="button" class="toolbar-btn" onclick="insertCitation()" title="Insérer citation">Citation</button>
+                </div>
+
+                <div id="editor" class="wysiwyg-editor" contenteditable="true">{{ article.body if article else '' }}</div>
+                <input type="hidden" id="body" name="body" value="{{ article.body if article else '' }}">
+                <small id="bodyCount">0 mots</small>
+            </div>
+        </div>
+
+        <!-- SECTION SOURCES & VÉRIFICATION -->
+        <div class="editor-section sources-section">
+            <h2>🔍 Sources & Vérification</h2>
+
+            <div class="form-group">
+                <label>Sources (minimum 3 requises)</label>
+                <div id="sources-list" class="sources-list">
+                    {% if article and article.sources %}
+                        {% for source in article.sources %}
+                        <div class="source-item">
+                            <input type="text" class="source-input" value="{{ source }}" placeholder="URL complète">
+                            <button type="button" class="btn-remove-source" onclick="removeSource(this)">✕</button>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <button type="button" class="btn-add-source" onclick="addSource()">+ Ajouter source</button>
+            </div>
+
+            <!-- Checklist de vérification -->
+            <div class="verification-checklist">
+                <h3>Avant de envoyer en validation :</h3>
+                <label class="checklist-item">
+                    <input type="checkbox" id="check-sources" onchange="updateSubmitButton()">
+                    <span>✓ Sources vérifiées (minimum 3, académiques/fiables)</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="check-facts" onchange="updateSubmitButton()">
+                    <span>✓ Faits validés et croisés</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="check-spelling" onchange="updateSubmitButton()">
+                    <span>✓ Orthographe et grammaire vérifiées</span>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" id="check-coherence" onchange="updateSubmitButton()">
+                    <span>✓ Cohérence interne et logique argumentative</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- SECTION ACTIONS -->
+        <div class="editor-section actions-section">
+            <div class="form-actions">
+                <button type="button" class="btn-cancel" onclick="goBack()">← Retour</button>
+                <button type="button" class="btn-draft" onclick="saveDraft()">💾 Enregistrer brouillon</button>
+                <button type="submit" id="submitBtn" class="btn-submit" disabled>✓ Envoyer en validation</button>
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+    </form>
+</div>
+
+<!-- Modal pour insérer une citation -->
+<div id="citationModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h3>Insérer une citation</h3>
+        <textarea id="citationText" placeholder="Texte de la citation" style="width:100%; height:80px;"></textarea>
+        <input type="text" id="citationAuthor" placeholder="Source / Auteur" style="width:100%; margin-top:10px;">
+        <div style="margin-top:15px; text-align:right;">
+            <button type="button" onclick="insertCitationConfirm()" class="btn">Insérer</button>
+            <button type="button" onclick="closeCitationModal()" class="btn-cancel">Annuler</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.editor-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.editor-header {
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.editor-header h1 {
+    margin: 0 0 8px;
+}
+
+.editor-subtitle {
+    margin: 0;
+    color: #666;
+}
+
+.article-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.editor-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.editor-section h2 {
+    margin: 0 0 15px;
+    font-size: 1.2rem;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.editor-section h3 {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-row {
+    display: grid;
+    gap: 15px;
+}
+
+.form-row.two-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.excerpt-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.format-guidance {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+small {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* WYSIWYG EDITOR */
+.wysiwyg-toolbar {
+    display: flex;
+    gap: 5px;
+    background: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    flex-wrap: wrap;
+}
+
+.toolbar-btn {
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.toolbar-sep {
+    width: 1px;
+    background: #ccc;
+    margin: 0 5px;
+}
+
+.wysiwyg-editor {
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    padding: 15px;
+    min-height: 400px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.wysiwyg-editor:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* SOURCES */
+.sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.source-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.source-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-remove-source {
+    padding: 8px 12px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-add-source {
+    align-self: flex-start;
+    padding: 10px 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* VÉRIFICATION */
+.verification-checklist {
+    background: #f0f7ff;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #4c8dff;
+    margin-top: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"]:checked + span {
+    color: #51cf66;
+    font-weight: bold;
+}
+
+/* ACTIONS */
+.actions-section {
+    border-top: 2px solid #eee;
+    margin-top: 30px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-cancel,
+.btn-draft,
+.btn-submit {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-cancel {
+    background: #ccc;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #999;
+    color: white;
+}
+
+.btn-draft {
+    background: #ffa500;
+    color: white;
+}
+
+.btn-draft:hover {
+    background: #ff8c00;
+}
+
+.btn-submit {
+    background: #51cf66;
+    color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: #40c057;
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.status-message {
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+}
+
+.status-message.success {
+    display: block;
+    background: #d3f9d8;
+    color: #2f5233;
+    border: 1px solid #51cf66;
+}
+
+.status-message.error {
+    display: block;
+    background: #ffe0e0;
+    color: #5a2020;
+    border: 1px solid #ff6b6b;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    margin: 0 0 15px;
+}
+
+@media (max-width: 768px) {
+    .form-row.two-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .wysiwyg-toolbar {
+        flex-wrap: wrap;
+    }
+}
+</style>
+
+<script>
+const formatGuidances = {
+    'article': 'Analyse approfondie : 2000-4000 mots, sources multiples, perspective stratégique',
+    'brief': 'Synthèse rapide : 500-800 mots, actualité décryptée, angle stratégique',
+    'editorial': 'Position de la rédaction : 800-1200 mots, opinion argumentée, ton personnel',
+    'interview': 'Questions-réponses avec expert, dialogue naturel, contexte clarifié',
+    'data_viz': 'Chronologie, frise temps, cartes, graphiques - format flexible',
+    'newsletter': 'Synthèse hebdomadaire : 300-500 mots, style accessible'
+};
+
+function updateFormatGuidance() {
+    const format = document.getElementById('format').value;
+    const guidance = document.getElementById('formatGuidance');
+    guidance.textContent = formatGuidances[format] || '';
+}
+
+// Éditeur WYSIWYG
+const editor = document.getElementById('editor');
+const bodyInput = document.getElementById('body');
+
+editor.addEventListener('input', function() {
+    bodyInput.value = this.innerHTML;
+    updateWordCount();
+    autoSaveDraft();
+});
+
+editor.addEventListener('blur', function() {
+    bodyInput.value = this.innerHTML;
+});
+
+function formatText(command, value = null) {
+    document.execCommand(command, false, value);
+    editor.focus();
+}
+
+function updateWordCount() {
+    const text = editor.textContent || '';
+    const words = text.trim().split(/\s+/).length;
+    document.getElementById('bodyCount').textContent = words + ' mots';
+}
+
+// Excerpt counter
+document.getElementById('excerpt').addEventListener('input', function() {
+    document.getElementById('excerptCount').textContent = this.value.length + ' / 500';
+});
+
+// Sources
+function addSource() {
+    const list = document.getElementById('sources-list');
+    const item = document.createElement('div');
+    item.className = 'source-item';
+    item.innerHTML = `
+        <input type="text" class="source-input" placeholder="URL complète">
+        <button type="button" class="btn-remove-source" onclick="removeSource(this)">✕</button>
+    `;
+    list.appendChild(item);
+}
+
+function removeSource(btn) {
+    btn.parentElement.remove();
+}
+
+// Citations
+function insertCitation() {
+    document.getElementById('citationModal').style.display = 'flex';
+}
+
+function closeCitationModal() {
+    document.getElementById('citationModal').style.display = 'none';
+}
+
+function insertCitationConfirm() {
+    const text = document.getElementById('citationText').value;
+    const author = document.getElementById('citationAuthor').value;
+    if (text) {
+        const citation = `<blockquote style="border-left:4px solid #667eea; padding-left:15px; margin:15px 0; font-style:italic;">"${text}"<br><strong>— ${author || 'Source'}</strong></blockquote>`;
+        editor.innerHTML += citation;
+        bodyInput.value = editor.innerHTML;
+        closeCitationModal();
+        document.getElementById('citationText').value = '';
+        document.getElementById('citationAuthor').value = '';
+    }
+}
+
+// Validation et soumission
+function updateSubmitButton() {
+    const allChecked = document.getElementById('check-sources').checked &&
+                       document.getElementById('check-facts').checked &&
+                       document.getElementById('check-spelling').checked &&
+                       document.getElementById('check-coherence').checked;
+    document.getElementById('submitBtn').disabled = !allChecked;
+}
+
+function saveDraft() {
+    const sources = Array.from(document.querySelectorAll('.source-input')).map(input => input.value).filter(v => v);
+    const data = {
+        title: document.getElementById('title').value,
+        rubrique: document.getElementById('rubrique').value,
+        format: document.getElementById('format').value,
+        author: document.getElementById('author').value,
+        reading_time: document.getElementById('reading_time').value,
+        excerpt: document.getElementById('excerpt').value,
+        body: editor.innerHTML,
+        tags: document.getElementById('tags').value.split(',').map(t => t.trim()),
+        sources: sources
+    };
+    
+    console.log('Brouillon sauvegardé:', data);
+    
+    const msg = document.getElementById('statusMessage');
+    msg.textContent = '✓ Brouillon enregistré automatiquement';
+    msg.className = 'status-message success';
+    setTimeout(() => msg.className = 'status-message', 3000);
+}
+
+function autoSaveDraft() {
+    // Sauvegarde auto toutes les 30 secondes
+    if (!window.autoSaveTimer) {
+        window.autoSaveTimer = setInterval(saveDraft, 30000);
+    }
+}
+
+function goBack() {
+    history.back();
+}
+
+document.getElementById('articleForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    saveDraft();
+    
+    const msg = document.getElementById('statusMessage');
+    msg.textContent = '✓ Article envoyé en validation. Redirection...';
+    msg.className = 'status-message success';
+    
+    setTimeout(() => {
+        window.location.href = '/editor';
+    }, 2000);
+});
+
+// Init
+window.addEventListener('load', function() {
+    updateFormatGuidance();
+    updateWordCount();
+    autoSaveDraft();
+});
+</script>
+{% endblock %}

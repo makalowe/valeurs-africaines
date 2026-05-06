@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% block title %}Filtres de Qualité | Valeurs Africaines{% endblock %}
+
+{% block content %}
+<div class="quality-filter-container">
+    <div class="filter-header">
+        <h1>🔍 Filtres de Qualité Editorial</h1>
+        <p class="filter-subtitle">Article: <strong>{{ article.title }}</strong></p>
+        <p class="filter-guidance">Double vérification avant publication - Pipeline: Collecte → Tri → Vérification → Angle → Rédaction</p>
+    </div>
+
+    <form method="post" class="quality-form">
+        <div class="quality-sections">
+            <!-- Qui parle ? -->
+            <div class="quality-box">
+                <h3>👤 Qui parle ? (Acteur)</h3>
+                <p class="quality-desc">Identifier l'acteur principal, ses intérêts, son positionnement</p>
+                <textarea name="actor" required placeholder="Ex: Gouvernement malien, JNIM, Union africaine, etc.">{{ article.quality_filter.actor if article.quality_filter else '' }}</textarea>
+            </div>
+
+            <!-- Quel intérêt ? -->
+            <div class="quality-box">
+                <h3>🎯 Quel intérêt ? (Agenda)</h3>
+                <p class="quality-desc">Analyser l'agenda caché, les motivations stratégiques</p>
+                <textarea name="agenda" required placeholder="Ex: Consolidation du pouvoir, accès aux ressources, influence géopolitique, etc.">{{ article.quality_filter.agenda if article.quality_filter else '' }}</textarea>
+            </div>
+
+            <!-- Quelle preuve ? -->
+            <div class="quality-box">
+                <h3>📄 Quelle preuve ? (Evidence)</h3>
+                <p class="quality-desc">Document, donnée, citation - sources vérifiables</p>
+                <textarea name="evidence" required placeholder="Ex: Rapport officiel, données économiques, déclaration publique, etc.">{{ article.quality_filter.evidence if article.quality_filter else '' }}</textarea>
+            </div>
+
+            <!-- Quelle contradiction ? -->
+            <div class="quality-box">
+                <h3>⚖️ Quelle contradiction ? (Contre-source)</h3>
+                <p class="quality-desc">Point de vue opposé, nuances, limites de la source</p>
+                <textarea name="contradiction" required placeholder="Ex: Analystes critiquent, données contradictoires, débat académique, etc.">{{ article.quality_filter.contradiction if article.quality_filter else '' }}</textarea>
+            </div>
+
+            <!-- Quelle conséquence ? -->
+            <div class="quality-box">
+                <h3>🌍 Quelle conséquence géopolitique ?</h3>
+                <p class="quality-desc">Impact stratégique, implications régionales/continentales</p>
+                <textarea name="consequence" required placeholder="Ex: Destabilisation du Sahel, repositionnement diplomatique, risque de conflit, etc.">{{ article.quality_filter.consequence if article.quality_filter else '' }}</textarea>
+            </div>
+
+            <!-- Angle éditorial -->
+            <div class="quality-box">
+                <h3>✍️ Angle éditorial proposé</h3>
+                <p class="quality-desc">Position de Valeurs Africaines - analytique et nuancée</p>
+                <textarea name="angle" required placeholder="Ex: Analyse de realpolitik, perspective de souveraineté, enjeux d'équilibre des puissances, etc.">{{ article.quality_filter.angle if article.quality_filter else '' }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="/editor" class="btn-cancel">← Retour</a>
+            <button type="submit" class="btn-submit">✓ Appliquer filtres et valider</button>
+        </div>
+    </form>
+
+    <!-- Référence pour les rédacteurs -->
+    <div class="quality-reference">
+        <h3>📚 Référence: Framework de vérification</h3>
+        <p>Ce formulaire applique la méthodologie Valeurs Africaines :</p>
+        <ul>
+            <li><strong>Acteur</strong> : Qui porte ce signal ?</li>
+            <li><strong>Agenda</strong> : Qu'est-ce qu'il veut vraiment ?</li>
+            <li><strong>Preuve</strong> : Avec quelles sources ?</li>
+            <li><strong>Contradiction</strong> : Qui dit le contraire ?</li>
+            <li><strong>Conséquence</strong> : Quel impact stratégique ?</li>
+            <li><strong>Angle</strong> : Notre lecture analytique ?</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.quality-filter-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.filter-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.filter-header h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.filter-subtitle {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.filter-guidance {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+.quality-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.quality-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.quality-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+}
+
+.quality-box h3 {
+    margin: 0 0 8px;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.quality-desc {
+    margin: 0 0 12px;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.quality-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.quality-box textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    background: #ccc;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-cancel:hover {
+    background: #999;
+    color: white;
+}
+
+.btn-submit {
+    padding: 12px 24px;
+    background: #51cf66;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-submit:hover {
+    background: #40c057;
+}
+
+.quality-reference {
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #4c8dff;
+}
+
+.quality-reference h3 {
+    margin: 0 0 15px;
+    color: #333;
+}
+
+.quality-reference p {
+    margin: 0 0 12px;
+    color: #555;
+}
+
+.quality-reference ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.quality-reference li {
+    margin: 8px 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .quality-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}

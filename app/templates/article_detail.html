@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }} | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <p class="rubrique-label">{{ article.rubrique }}</p>
+    <h1>{{ article.title }}</h1>
+    <p class="meta">{{ article.published_at }} • {{ article.reading_time }}</p>
+    <p>{{ article.excerpt }}</p>
+    <hr>
+    <p>{{ article.body }}</p>
+  </div>
+</section>
+{% endblock %}

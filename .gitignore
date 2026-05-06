@@ -1,0 +1,10 @@
+site.db
+site_test.db
+*.db-journal
+extracted/
+.venv/
+__pycache__/
+*.pyc
+.env
+nul
+*.zip

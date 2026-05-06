@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Admin | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h1>Back-office articles</h1><p>Abonnes newsletter: {{ subscribers_count }}</p>
+    <p><a href="{{ url_for('main.admin_logout') }}">Se deconnecter</a> | <a href="{{ url_for('main.export_subscribers_csv') }}">Exporter CSV abonnes</a></p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}<p>{{ messages[0] }}</p>{% endif %}
+    {% endwith %}
+
+    <h2>Nouvel article</h2>
+    <form class="form" method="post">
+      <label>Rubrique</label>
+      <input name="rubrique" required>
+      <label>Titre</label>
+      <input name="title" required>
+      <label>Resume</label>
+      <input name="excerpt" required>
+      <label>Temps de lecture</label>
+      <input name="reading_time" value="6 min de lecture" required>
+      <label>Contenu</label>
+      <textarea name="body" rows="6" required></textarea>
+      <button type="submit" class="btn btn-primary">Creer brouillon</button>
+    </form>
+
+    <h2>Articles</h2>
+    <table class="admin-table">
+      <thead>
+        <tr><th>ID</th><th>Rubrique</th><th>Titre</th><th>Statut</th><th>Mis en avant</th><th>Actions</th></tr>
+      </thead>
+      <tbody>
+      {% for row in rows %}
+        <tr>
+          <td>{{ row.id }}</td>
+          <td>{{ row.rubrique }}</td>
+          <td>{{ row.title }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ 'Oui' if row.is_featured else 'Non' }}</td>
+          <td>
+            <form method="post" action="{{ url_for('main.publish_article', article_id=row.id) }}" style="display:inline;">
+              <button type="submit">Publier</button>
+            </form>
+            <form method="post" action="{{ url_for('main.feature_article', article_id=row.id) }}" style="display:inline;">
+              <button type="submit">Mettre en une</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+
+

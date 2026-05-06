@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Articles | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container narrow">
+        <h1>Articles publies</h1>
+        {% for row in rows %}
+        <article class="article-list-item">
+            <p class="rubrique-label">{{ row.rubrique }}</p>
+            <h2><a class="headline-link" href="{{ url_for('main.article_detail', slug=row.slug) }}">{{ row.title }}</a></h2>
+            <p>{{ row.excerpt }}</p>
+            <p class="meta">{{ row.published_at }} • {{ row.reading_time }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

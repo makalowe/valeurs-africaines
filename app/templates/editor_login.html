@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Connexion Éditeur | Valeurs Africaines{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <h1>Connexion Éditeur</h1>
+        <p class="login-subtitle">Accès Dashboard Editorial</p>
+        
+        <form method="post">
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required autofocus>
+            </div>
+            <button type="submit" class="btn-login">Accéder au Dashboard</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="error-message">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+<style>
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h1 {
+    margin: 0 0 10px;
+    color: #111;
+    font-size: 2rem;
+}
+
+.login-subtitle {
+    color: #666;
+    margin: 0 0 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.error-message {
+    margin-top: 20px;
+    padding: 12px;
+    background: #ffebee;
+    color: #c62828;
+    border-radius: 5px;
+    border-left: 4px solid #c62828;
+}
+</style>
+{% endblock %}

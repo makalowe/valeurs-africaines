@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Valeurs Africaines{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ meta_description or 'Magazine geopolitique de reference sur l\'Afrique francophone.' }}{% endblock %}">
+    <link rel="canonical" href="{{ request.url }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    {% include 'components/header.html' %}
+    <main class="site-main">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="container flash-box">{{ messages[0] }}</div>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'components/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Newsletter | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section">
+    <div class="container narrow">
+        <h1>Newsletter</h1>
+        <p>Une synthese geopolitique hebdomadaire: analyses, signaux faibles et rapports de force.</p>
+
+        <form class="form" method="post" action="{{ url_for('main.newsletter_subscribe') }}">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+            <button type="submit" class="btn btn-primary">S'inscrire via Valeurs Africaines</button>
+        </form>
+
+        {% if substack_url %}
+        <p style="margin-top:14px;">
+            Ou inscription directe Substack: <a href="{{ substack_url }}" target="_blank" rel="noopener">{{ substack_url }}</a>
+        </p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
