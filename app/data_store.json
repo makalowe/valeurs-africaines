@@ -15,8 +15,15 @@
       "author": "VA Desk",
       "created_at": "2026-05-01",
       "sources": [],
-      "tags": ["Sahel", "Geopolitique"],
-      "verification_checklist": {"sources_verified": true, "facts_checked": true, "peer_reviewed": true}
+      "tags": [
+        "Sahel",
+        "Geopolitique"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": true
+      }
     },
     {
       "id": 2,
@@ -33,8 +40,15 @@
       "author": "VA Desk",
       "created_at": "2026-05-01",
       "sources": [],
-      "tags": ["Union Africaine", "Diplomatie"],
-      "verification_checklist": {"sources_verified": true, "facts_checked": true, "peer_reviewed": false}
+      "tags": [
+        "Union Africaine",
+        "Diplomatie"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": false
+      }
     },
     {
       "id": 10,
@@ -43,16 +57,28 @@
       "excerpt": "Apres les attaques coordonnees de fin avril, le Mali entre dans une phase de forte tension: securite, gouvernance et crise humanitaire se superposent.",
       "body": "Au 4 mai 2026, la situation malienne est marquee par une acceleration des risques sur trois fronts: securitaire, politique et humanitaire. Sur le front securitaire, la sequence ouverte fin avril a change l'echelle du conflit. Des attaques coordonnees revendiquees par le JNIM et des groupes allies ont vise plusieurs positions, y compris autour de Bamako et de Kati.",
       "reading_time": "9 min de lecture",
-      "status": "validation",
+      "status": "published",
       "is_featured": 0,
-      "published_at": null,
+      "published_at": "2026-05-06",
       "slug": "dossier-special-mali-situation-4-mai-2026",
       "format": "article",
       "author": "Nael T. Koffi",
       "created_at": "2026-05-04",
-      "sources": ["https://example.com/mali-security", "https://example.com/mali-politics", "https://example.com/mali-humanitarian"],
-      "tags": ["Mali", "Securite", "Conflits"],
-      "verification_checklist": {"sources_verified": false, "facts_checked": false, "peer_reviewed": false}
+      "sources": [
+        "https://example.com/mali-security",
+        "https://example.com/mali-politics",
+        "https://example.com/mali-humanitarian"
+      ],
+      "tags": [
+        "Mali",
+        "Securite",
+        "Conflits"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": true
+      }
     },
     {
       "id": 11,
@@ -61,16 +87,28 @@
       "excerpt": "En 2026, le principal enjeu pour l'Union africaine n'est pas seulement de diversifier ses partenariats, mais surtout de preserver une autonomie strategique institutionnelle.",
       "body": "L'Union africaine evolue dans un environnement ou les partenaires externes multiplient les offres de cooperation, de financement et d'appui securitaire. En 2026, la question centrale n'est plus seulement de choisir des partenaires, mais de maintenir une marge de manoeuvre institutionnelle suffisante face a des agendas concurrents.",
       "reading_time": "7 min de lecture",
-      "status": "validation",
+      "status": "published",
       "is_featured": 0,
-      "published_at": null,
+      "published_at": "2026-05-06",
       "slug": "brief-union-africaine-puissances-exterieures-2026",
       "format": "brief",
       "author": "Selene B. Okoro",
       "created_at": "2026-05-06",
-      "sources": ["https://example.com/ua-diplomacy", "https://example.com/ua-partnerships", "https://example.com/ua-autonomy"],
-      "tags": ["Union Africaine", "Diplomatie", "Partenariats"],
-      "verification_checklist": {"sources_verified": false, "facts_checked": false, "peer_reviewed": false}
+      "sources": [
+        "https://example.com/ua-diplomacy",
+        "https://example.com/ua-partnerships",
+        "https://example.com/ua-autonomy"
+      ],
+      "tags": [
+        "Union Africaine",
+        "Diplomatie",
+        "Partenariats"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": true
+      }
     },
     {
       "id": 12,
@@ -79,16 +117,28 @@
       "excerpt": "La guerre informationnelle en Afrique est devenue un champ strategique structure par plusieurs puissances exterieures et regionales avec des ecosystemes mediatiques, diplomatiques et technologiques coherents.",
       "body": "La Russie exerce une influence notable via un narratif souverainiste, des reseaux mediatiques transnationaux et des relais numeriques tres reactifs. La Chine combine medias internationaux, diplomatie d'infrastructure et communication institutionnelle disciplinee. Les Etats-Unis conservent une influence forte par la profondeur de leur ecosysteme mediatique global.",
       "reading_time": "9 min de lecture",
-      "status": "validation",
+      "status": "published",
       "is_featured": 0,
-      "published_at": null,
+      "published_at": "2026-05-06",
       "slug": "guerre-informationnelle-afrique-acteurs-doctrines",
       "format": "article",
       "author": "Nael T. Koffi",
       "created_at": "2026-05-03",
-      "sources": ["https://example.com/info-war-russia", "https://example.com/info-war-china", "https://example.com/info-war-us"],
-      "tags": ["Renseignement", "Information", "Geopolitique"],
-      "verification_checklist": {"sources_verified": false, "facts_checked": false, "peer_reviewed": false}
+      "sources": [
+        "https://example.com/info-war-russia",
+        "https://example.com/info-war-china",
+        "https://example.com/info-war-us"
+      ],
+      "tags": [
+        "Renseignement",
+        "Information",
+        "Geopolitique"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": true
+      }
     },
     {
       "id": 13,
@@ -97,16 +147,28 @@
       "excerpt": "Dans l'economie politique de l'information, la langue est un instrument de pouvoir. En Afrique, la bataille narrative ne se joue pas uniquement sur les plateformes numeriques mais aussi dans le choix des langues qui produisent et legitiment le debat public.",
       "body": "Pendant longtemps, l'espace mediatique institutionnel est reste domine par des langues heritees de l'histoire coloniale, en particulier le francais, l'anglais et le portugais. Quand une partie importante de la population consomme mieux l'information dans des langues africaines, l'absence de contenus strategiques dans ces langues produit une inegalite cognitive.",
       "reading_time": "8 min de lecture",
-      "status": "validation",
+      "status": "published",
       "is_featured": 0,
-      "published_at": null,
+      "published_at": "2026-05-06",
       "slug": "langues-africaines-souverainete-narrative",
       "format": "article",
       "author": "Jonas E. Makena",
       "created_at": "2026-05-04",
-      "sources": ["https://example.com/languages-africa", "https://example.com/narrative-sovereignty", "https://example.com/media-languages"],
-      "tags": ["Culture", "Langues", "Souverainete"],
-      "verification_checklist": {"sources_verified": false, "facts_checked": false, "peer_reviewed": false}
+      "sources": [
+        "https://example.com/languages-africa",
+        "https://example.com/narrative-sovereignty",
+        "https://example.com/media-languages"
+      ],
+      "tags": [
+        "Culture",
+        "Langues",
+        "Souverainete"
+      ],
+      "verification_checklist": {
+        "sources_verified": true,
+        "facts_checked": true,
+        "peer_reviewed": true
+      }
     }
   ],
   "signals": [

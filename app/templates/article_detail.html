@@ -1,14 +1,92 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title }} | Valeurs Africaines{% endblock %}
+{% block meta_description %}{{ article.excerpt }}{% endblock %}
+{% block extra_head %}
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ article.title }}">
+<meta property="og:description" content="{{ article.excerpt }}">
+<meta property="og:url" content="{{ request.url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ article.title }}">
+<meta name="twitter:description" content="{{ article.excerpt }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{ article.title }}",
+  "description": "{{ article.excerpt }}",
+  "author": {"@type": "Person", "name": "{{ article.author }}"},
+  "datePublished": "{{ article.published_at }}",
+  "publisher": {"@type": "Organization", "name": "Valeurs Africaines"}
+}
+</script>
+{% endblock %}
 {% block content %}
 <section class="section">
-  <div class="container narrow">
-    <p class="rubrique-label">{{ article.rubrique }}</p>
-    <h1>{{ article.title }}</h1>
-    <p class="meta">{{ article.published_at }} • {{ article.reading_time }}</p>
-    <p>{{ article.excerpt }}</p>
-    <hr>
-    <p>{{ article.body }}</p>
+  <div class="container narrow" style="max-width:720px;margin:0 auto;padding:0 20px;">
+
+    <p style="margin-bottom:0.5rem;">
+      <a href="{{ url_for('main.articles') }}" style="color:var(--red);text-decoration:none;font-size:0.9rem;">&larr; Tous les articles</a>
+    </p>
+
+    <p class="rubrique-label" style="margin-top:1.5rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;font-size:0.85rem;">{{ article.rubrique }}</p>
+
+    <h1 style="font-size:1.8rem;line-height:1.2;margin:0.5rem 0 1rem;">{{ article.title }}</h1>
+
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1rem;">
+      <span>Par <strong>{{ article.author }}</strong></span>
+      <span>{{ article.published_at }}</span>
+      <span>{{ article.reading_time }}</span>
+    </div>
+
+    <p style="font-size:1.1rem;line-height:1.6;color:var(--ink);font-style:italic;margin-bottom:1.5rem;padding-left:1rem;border-left:3px solid var(--red);">
+      {{ article.excerpt }}
+    </p>
+
+    <div style="line-height:1.8;font-size:1rem;">
+      {% for paragraph in article.body.split('\n') %}
+        {% if paragraph.strip() %}
+          <p style="margin-bottom:1rem;">{{ paragraph }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if article.tags %}
+    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);">
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">Mots-cles :</p>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        {% for tag in article.tags %}
+          <span style="background:var(--line);padding:0.2rem 0.6rem;border-radius:3px;font-size:0.8rem;">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if article.sources %}
+    <details style="margin-top:1.5rem;border:1px solid var(--line);border-radius:4px;padding:0.8rem 1rem;">
+      <summary style="cursor:pointer;font-weight:bold;font-size:0.9rem;">Sources ({{ article.sources|length }})</summary>
+      <ol style="margin-top:0.8rem;padding-left:1.2rem;">
+      {% for src in article.sources %}
+        <li style="margin-bottom:0.4rem;font-size:0.85rem;"><a href="{{ src }}" target="_blank" rel="noopener" style="color:var(--red);">{{ src }}</a></li>
+      {% endfor %}
+      </ol>
+    </details>
+    {% endif %}
+
+    <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);text-align:center;">
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.8rem;">Partager cet article :</p>
+      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://twitter.com/intent/tweet?text={{ article.title }}&url={{ request.url }}" target="_blank" rel="noopener" style="background:#1DA1F2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Twitter</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}" target="_blank" rel="noopener" style="background:#0A66C2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}" target="_blank" rel="noopener" style="background:#1877F2;color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Facebook</a>
+        <a href="mailto:?subject={{ article.title }}&body={{ request.url }}" style="background:var(--muted);color:white;padding:0.4rem 1rem;border-radius:4px;text-decoration:none;font-size:0.85rem;">Email</a>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem;text-align:center;">
+      <a href="{{ url_for('main.articles') }}" style="color:var(--red);text-decoration:none;">&larr; Retour a la liste des articles</a>
+    </p>
+
   </div>
 </section>
 {% endblock %}
