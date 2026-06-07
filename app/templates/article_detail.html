@@ -3,7 +3,7 @@
 {% block content %}
 <section class="section">
   <div class="container article-full">
-    <p class="rubrique-label">{{ article.rubrique }}</p>
+    <p class="rubrique-label">{{ article.format_label or article.rubrique }}</p>
     <h1>{{ article.title }}</h1>
     {% if article.country == "Mali" %}
     <p class="country-motto-line">🇲🇱 {{ article.country_motto or "Un Peuple - Un But - Une Foi" }}</p>
@@ -12,8 +12,39 @@
     <p class="subtitle-credit">{{ article.subtitle_credit }}</p>
     {% endif %}
     <p class="meta">Par {{ article.author or "Redaction VA" }} • {{ article.published_at or article.scheduled_at }} • {{ article.reading_time }}</p>
-    {% if article.image %}<img class="article-hero-img" src="{{ url_for('static', filename='img/' + article.image) }}" alt="Illustration {{ article.title }}" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">{% endif %}
+    {% if edition %}
+    <p class="edition-context"><a href="{{ url_for('main.edition_detail', slug=edition.slug) }}">{{ edition.number or "Edition hebdomadaire" }} - {{ edition.period }}</a></p>
+    {% endif %}
+    <div class="article-taxonomy">
+      <span>{{ article.rubrique }}</span>
+      {% if article.country %}<span>{{ article.country }}</span>{% endif %}
+      {% if article.theme %}<span>{{ article.theme }}</span>{% endif %}
+      {% if article.confidence_level %}<span>Confiance {{ article.confidence_level }}</span>{% endif %}
+    </div>
+    {% if article.image %}
+    <button class="article-hero-button" type="button" data-lightbox-open aria-label="Agrandir l'illustration">
+      <img class="article-hero-img" src="{{ url_for('static', filename='img/' + article.image) }}" alt="Illustration {{ article.title }}">
+    </button>
+    <div class="image-lightbox" data-lightbox aria-hidden="true">
+      <button class="image-lightbox-close" type="button" data-lightbox-close aria-label="Fermer l'illustration agrandie">×</button>
+      <img class="image-lightbox-img" src="{{ url_for('static', filename='img/' + article.image) }}" alt="Illustration {{ article.title }}">
+    </div>
+    {% endif %}
     <p>{{ article.excerpt }}</p>
+    {% if article.strategic_question or article.key_points %}
+    <section class="article-brief-box">
+      {% if article.strategic_question %}
+      <h2>Question strategique</h2>
+      <p>{{ article.strategic_question }}</p>
+      {% endif %}
+      {% if article.key_points %}
+      <h2>Points cles</h2>
+      <ul>
+        {% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </section>
+    {% endif %}
     <hr>
     {% for paragraph in article.body.split('\n\n') %}
       <p>{{ paragraph }}</p>
@@ -74,8 +105,40 @@
       </svg>
     </section>
     {% endif %}
+    {% if article.methodology or article.implications or article.limitations %}
+    <section class="article-method">
+      {% if article.methodology %}
+      <h2>Methode</h2>
+      <dl>
+        {% if article.methodology.question %}<dt>Question analysee</dt><dd>{{ article.methodology.question }}</dd>{% endif %}
+        {% if article.methodology.scope %}<dt>Perimetre</dt><dd>{{ article.methodology.scope }}</dd>{% endif %}
+        {% if article.methodology.period %}<dt>Periode couverte</dt><dd>{{ article.methodology.period }}</dd>{% endif %}
+        {% if article.methodology.sources %}<dt>Sources utilisees</dt><dd>{{ article.methodology.sources }}</dd>{% endif %}
+        {% if article.methodology.assumptions %}<dt>Hypotheses</dt><dd>{{ article.methodology.assumptions }}</dd>{% endif %}
+        {% if article.methodology.limits %}<dt>Limites methodologiques</dt><dd>{{ article.methodology.limits }}</dd>{% endif %}
+      </dl>
+      {% endif %}
+      {% if article.implications %}
+      <h2>Implications strategiques</h2>
+      <ul>
+        {% for implication in article.implications %}<li>{{ implication }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if article.limitations %}
+      <h2>Limites de l'analyse</h2>
+      <p>{{ article.limitations }}</p>
+      {% endif %}
+    </section>
+    {% endif %}
   </div>
-  {% if article.sources %}
+  {% if article.sources and article.citation_style == "french-footnotes" %}
+  <section class="article-sources article-footnotes">
+    <h2>{{ article.notes_label or "Notes" }}</h2>
+    <ol>
+      {% for s in article.sources %}<li>{{ s }}</li>{% endfor %}
+    </ol>
+  </section>
+  {% elif article.sources %}
   <section class="article-sources">
     <h2>Sources</h2>
     <ul>
@@ -84,6 +147,38 @@
   </section>
   {% endif %}
 </section>
+{% if article.image %}
+<script>
+  (() => {
+    const openButton = document.querySelector("[data-lightbox-open]");
+    const lightbox = document.querySelector("[data-lightbox]");
+    const closeButton = document.querySelector("[data-lightbox-close]");
+
+    if (!openButton || !lightbox || !closeButton) return;
+
+    const openLightbox = () => {
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+      closeButton.focus();
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("lightbox-open");
+      openButton.focus();
+    };
+
+    openButton.addEventListener("click", openLightbox);
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+    });
+  })();
+</script>
+{% endif %}
 {% endblock %}
-
-

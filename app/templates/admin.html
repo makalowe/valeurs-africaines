@@ -21,6 +21,15 @@
     <p><strong>Collecte -> Tri -> Verification -> Angle -> Redaction</strong></p>
     <p>Regle: rien n'entre en publication sans double verification.</p>
 
+    <h3>Formats editoriaux VA</h3>
+    <ul>
+      <li><strong>Analyse</strong>: angle fort, contexte, acteurs, rapports de force.</li>
+      <li><strong>Brief strategique</strong>: lecture rapide, points cles, implications.</li>
+      <li><strong>Note pays</strong>: pays, risques, scenarios 30/90 jours.</li>
+      <li><strong>Research Brief</strong>: methode, limites, niveau de confiance, recommandations.</li>
+      <li><strong>Data / Infographie</strong>: illustration centrale, chiffres cles, commentaire court.</li>
+    </ul>
+
     <h3>Rituel quotidien (60-90 min)</h3>
     <ul>
       <li>Matin: scan rapide headlines + alertes.</li>
@@ -38,19 +47,63 @@
 
     <h3>Cadence recommandee</h3>
     <ul>
-      <li>2 briefs/semaine (actualite chaude)</li>
-      <li>1 analyse de fond/semaine</li>
-      <li>1 note de contexte pays/semaine</li>
+      <li>1 edition hebdomadaire publiee chaque semaine.</li>
+      <li>2 briefs/semaine (actualite chaude).</li>
+      <li>1 analyse de fond/semaine.</li>
+      <li>1 note de contexte pays/semaine.</li>
     </ul>
+
+    <h3>Editions hebdomadaires</h3>
+    <table class="admin-table">
+      <thead>
+        <tr><th>Numero</th><th>Titre</th><th>Periode</th><th>Statut</th><th>Lien</th></tr>
+      </thead>
+      <tbody>
+      {% for edition in editions %}
+        <tr>
+          <td>{{ edition.number }}</td>
+          <td>{{ edition.title }}</td>
+          <td>{{ edition.period }}</td>
+          <td>{{ edition.status or "published" }}</td>
+          <td><a href="{{ url_for('main.edition_detail', slug=edition.slug) }}">Voir</a></td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5">Aucune edition creee.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
 
     <h2>Sujet verifie -> brouillon automatique</h2>
     <form class="form" method="post" action="{{ url_for('main.create_verified_draft') }}">
       <label>Rubrique</label>
       <input name="rubrique" required>
+      <label>Format editorial</label>
+      <select name="format_label">
+        <option>Research Brief</option>
+        <option>Analyse</option>
+        <option>Brief strategique</option>
+        <option>Note pays</option>
+        <option>Data / Infographie</option>
+      </select>
       <label>Titre du sujet</label>
       <input name="title" required>
+      <label>Pays / zone</label>
+      <input name="country">
+      <label>Theme</label>
+      <input name="theme">
       <label>Pseudonyme (signature)</label>
       <input name="author" value="Redaction VA" required>
+      <label>Edition hebdomadaire</label>
+      <select name="edition_slug">
+        <option value="">Non rattache</option>
+        {% for edition in editions %}
+        <option value="{{ edition.slug }}">{{ edition.number }} - {{ edition.period }}</option>
+        {% endfor %}
+      </select>
+      <label>Question strategique</label>
+      <textarea name="strategic_question" rows="2"></textarea>
+      <label>Points cles (un par ligne)</label>
+      <textarea name="key_points" rows="4"></textarea>
       <label>Qui parle ? (acteur)</label>
       <input name="actor" required>
       <label>Quel interet ? (agenda)</label>
@@ -63,6 +116,32 @@
       <textarea name="consequence" rows="3" required></textarea>
       <label>Angle editorial propose</label>
       <textarea name="angle" rows="3" required></textarea>
+      <fieldset class="method-fieldset">
+        <legend>Methode RAND / think tank</legend>
+        <label>Question analysee</label>
+        <input name="method_question">
+        <label>Perimetre geographique</label>
+        <input name="method_scope">
+        <label>Periode couverte</label>
+        <input name="method_period">
+        <label>Sources utilisees</label>
+        <textarea name="method_sources" rows="3"></textarea>
+        <label>Hypotheses</label>
+        <textarea name="method_assumptions" rows="3"></textarea>
+        <label>Limites methodologiques</label>
+        <textarea name="method_limits" rows="3"></textarea>
+      </fieldset>
+      <label>Implications strategiques (une par ligne)</label>
+      <textarea name="implications" rows="4"></textarea>
+      <label>Limites de l'analyse</label>
+      <textarea name="limitations" rows="3"></textarea>
+      <label>Niveau de confiance</label>
+      <select name="confidence_level">
+        <option value="">Non precise</option>
+        <option>Faible</option>
+        <option>Moyen</option>
+        <option>Eleve</option>
+      </select>
       <label>Temps de lecture cible</label>
       <input name="reading_time" value="7 min de lecture" required>
       <label>Sources (une par ligne) - obligatoire</label>
@@ -76,14 +155,63 @@
     <form class="form" method="post">
       <label>Rubrique</label>
       <input name="rubrique" required>
+      <label>Format editorial</label>
+      <select name="format_label">
+        <option>Research Brief</option>
+        <option>Analyse</option>
+        <option>Brief strategique</option>
+        <option>Note pays</option>
+        <option>Data / Infographie</option>
+      </select>
       <label>Titre</label>
       <input name="title" required>
+      <label>Pays / zone</label>
+      <input name="country">
+      <label>Theme</label>
+      <input name="theme">
       <label>Pseudonyme (signature)</label>
       <input name="author" value="Redaction VA" required>
+      <label>Edition hebdomadaire</label>
+      <select name="edition_slug">
+        <option value="">Non rattache</option>
+        {% for edition in editions %}
+        <option value="{{ edition.slug }}">{{ edition.number }} - {{ edition.period }}</option>
+        {% endfor %}
+      </select>
       <label>Resume</label>
       <input name="excerpt" required>
+      <label>Question strategique</label>
+      <textarea name="strategic_question" rows="2"></textarea>
+      <label>Points cles (un par ligne)</label>
+      <textarea name="key_points" rows="4"></textarea>
       <label>Temps de lecture</label>
       <input name="reading_time" value="6 min de lecture" required>
+      <fieldset class="method-fieldset">
+        <legend>Methode RAND / think tank</legend>
+        <label>Question analysee</label>
+        <input name="method_question">
+        <label>Perimetre geographique</label>
+        <input name="method_scope">
+        <label>Periode couverte</label>
+        <input name="method_period">
+        <label>Sources utilisees</label>
+        <textarea name="method_sources" rows="3"></textarea>
+        <label>Hypotheses</label>
+        <textarea name="method_assumptions" rows="3"></textarea>
+        <label>Limites methodologiques</label>
+        <textarea name="method_limits" rows="3"></textarea>
+      </fieldset>
+      <label>Implications strategiques (une par ligne)</label>
+      <textarea name="implications" rows="4"></textarea>
+      <label>Limites de l'analyse</label>
+      <textarea name="limitations" rows="3"></textarea>
+      <label>Niveau de confiance</label>
+      <select name="confidence_level">
+        <option value="">Non precise</option>
+        <option>Faible</option>
+        <option>Moyen</option>
+        <option>Eleve</option>
+      </select>
       <label>Sources (une par ligne) - obligatoire</label>
       <textarea name="sources" rows="4" required></textarea>
       <label>Date de publication (optionnel)</label>

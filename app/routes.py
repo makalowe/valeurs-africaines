@@ -7,12 +7,16 @@ from flask import Blueprint, Response, abort, flash, redirect, render_template, 
 
 from .data import (
     add_subscriber,
+    articles_for_edition,
     create_article,
+    current_edition,
     feature_article as set_featured,
     featured_article,
     get_article_by_slug,
     get_any_article_by_slug,
+    get_edition_by_slug,
     list_articles,
+    list_editions,
     list_published,
     list_subscribers,
     publish_article as set_published,
@@ -153,7 +157,18 @@ def home():
         "tech": _card(tech_row) if tech_row else None,
     }
 
-    return render_template("home.html", featured=featured, headlines=headlines, today_focus=today_focus, meta_description="Revue geopolitique africaine: analyses de fond, diplomatie, securite, ressources et veille strategique.")
+    edition = current_edition()
+    edition_articles = articles_for_edition(edition["slug"])[:4] if edition else []
+
+    return render_template(
+        "home.html",
+        featured=featured,
+        headlines=headlines,
+        today_focus=today_focus,
+        current_edition=edition,
+        edition_articles=edition_articles,
+        meta_description="Revue geopolitique africaine: analyses de fond, diplomatie, securite, ressources et veille strategique.",
+    )
 
 
 @bp.route("/articles")
@@ -167,7 +182,34 @@ def article_detail(slug: str):
     article = get_article_by_slug(slug)
     if not article:
         abort(404)
-    return render_template("article_detail.html", article=article, meta_description=article["excerpt"])
+    edition = get_edition_by_slug(article.get("edition_slug", "")) if article.get("edition_slug") else None
+    return render_template("article_detail.html", article=article, edition=edition, meta_description=article["excerpt"])
+
+
+@bp.route("/editions")
+def editions():
+    rows = list_editions()
+    edition_counts = {row.get("slug"): len(articles_for_edition(row.get("slug", ""))) for row in rows}
+    return render_template(
+        "editions.html",
+        rows=rows,
+        edition_counts=edition_counts,
+        meta_description="Archives des editions hebdomadaires de Valeurs Africaines.",
+    )
+
+
+@bp.route("/editions/<slug>")
+def edition_detail(slug: str):
+    edition = get_edition_by_slug(slug)
+    if not edition:
+        abort(404)
+    rows = articles_for_edition(slug)
+    return render_template(
+        "edition_detail.html",
+        edition=edition,
+        rows=rows,
+        meta_description=edition.get("excerpt") or edition.get("editorial", "")[:160],
+    )
 
 
 @bp.route("/rubriques")
@@ -232,9 +274,10 @@ def legal():
 @bp.route("/sitemap.xml")
 def sitemap():
     base = request.url_root.rstrip("/")
-    static_paths = ["", "/articles", "/rubriques", "/a-propos", "/methodologie", "/politique-correction", "/newsletter", "/contact", "/mentions-legales"]
+    static_paths = ["", "/articles", "/editions", "/rubriques", "/a-propos", "/methodologie", "/politique-correction", "/newsletter", "/contact", "/mentions-legales"]
     article_paths = [f"/articles/{row['slug']}" for row in list_published()]
-    all_paths = static_paths + article_paths
+    edition_paths = [f"/editions/{row['slug']}" for row in list_editions()]
+    all_paths = static_paths + edition_paths + article_paths
 
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in all_paths:
@@ -275,18 +318,63 @@ def admin():
         body = request.form.get("body", "").strip()
         reading_time = request.form.get("reading_time", "6 min de lecture").strip()
         author = request.form.get("author", "Redaction VA").strip()
+        country = request.form.get("country", "").strip() or None
+        theme = request.form.get("theme", "").strip() or None
+        format_label = request.form.get("format_label", "").strip() or None
+        strategic_question = request.form.get("strategic_question", "").strip() or None
+        methodology = _editorial_methodology_from_form(request.form)
+        key_points = _lines_from_form("key_points")
+        implications = _lines_from_form("implications")
+        limitations = request.form.get("limitations", "").strip() or None
+        confidence_level = request.form.get("confidence_level", "").strip() or None
+        edition_slug = request.form.get("edition_slug", "").strip() or None
         scheduled_at = request.form.get("scheduled_at", "").strip() or None
         sources_raw = request.form.get("sources", "").strip()
         sources = [line.strip() for line in sources_raw.splitlines() if line.strip()]
 
         if rubrique and title and excerpt and body and reading_time and sources:
-            create_article(rubrique, title, excerpt, body, reading_time, author=author or "Redaction VA", scheduled_at=scheduled_at, sources=sources)
+            create_article(
+                rubrique,
+                title,
+                excerpt,
+                body,
+                reading_time,
+                author=author or "Redaction VA",
+                scheduled_at=scheduled_at,
+                sources=sources,
+                country=country,
+                theme=theme,
+                format_label=format_label,
+                strategic_question=strategic_question,
+                methodology=methodology,
+                key_points=key_points,
+                implications=implications,
+                limitations=limitations,
+                confidence_level=confidence_level,
+                edition_slug=edition_slug,
+            )
             flash("Article cree en brouillon.")
             return redirect(url_for("main.admin"))
         flash("Tous les champs sont obligatoires, y compris les sources.")
 
     rows = list_articles()
-    return render_template("admin.html", rows=rows, kpi=_kpi_snapshot(), meta_description="Back-office Valeurs Africaines.")
+    return render_template("admin.html", rows=rows, editions=list_editions(), kpi=_kpi_snapshot(), meta_description="Back-office Valeurs Africaines.")
+
+
+def _lines_from_form(field_name: str) -> list[str]:
+    return [line.strip() for line in request.form.get(field_name, "").splitlines() if line.strip()]
+
+
+def _editorial_methodology_from_form(form) -> dict:
+    fields = {
+        "question": form.get("method_question", "").strip(),
+        "scope": form.get("method_scope", "").strip(),
+        "period": form.get("method_period", "").strip(),
+        "sources": form.get("method_sources", "").strip(),
+        "assumptions": form.get("method_assumptions", "").strip(),
+        "limits": form.get("method_limits", "").strip(),
+    }
+    return {key: value for key, value in fields.items() if value}
 
 
 @bp.route("/admin/verified-draft", methods=["POST"])
@@ -304,6 +392,16 @@ def create_verified_draft():
     angle = request.form.get("angle", "").strip()
     reading_time = request.form.get("reading_time", "7 min de lecture").strip()
     author = request.form.get("author", "Redaction VA").strip()
+    country = request.form.get("country", "").strip() or None
+    theme = request.form.get("theme", "").strip() or None
+    format_label = request.form.get("format_label", "").strip() or "Brief strategique"
+    strategic_question = request.form.get("strategic_question", "").strip() or title
+    methodology = _editorial_methodology_from_form(request.form)
+    key_points = _lines_from_form("key_points")
+    implications = _lines_from_form("implications")
+    limitations = request.form.get("limitations", "").strip() or None
+    confidence_level = request.form.get("confidence_level", "").strip() or None
+    edition_slug = request.form.get("edition_slug", "").strip() or None
     scheduled_at = request.form.get("scheduled_at", "").strip() or None
     sources_raw = request.form.get("sources", "").strip()
     sources = [line.strip() for line in sources_raw.splitlines() if line.strip()]
@@ -323,7 +421,26 @@ def create_verified_draft():
         f"- Quelle consequence geopolitique ? {consequence}\n\n"
         f"Angle editorial propose:\n{angle}\n"
     )
-    create_article(rubrique, title, excerpt, body, reading_time, author=author or "Redaction VA", scheduled_at=scheduled_at, sources=sources)
+    create_article(
+        rubrique,
+        title,
+        excerpt,
+        body,
+        reading_time,
+        author=author or "Redaction VA",
+        scheduled_at=scheduled_at,
+        sources=sources,
+        country=country,
+        theme=theme,
+        format_label=format_label,
+        strategic_question=strategic_question,
+        methodology=methodology,
+        key_points=key_points,
+        implications=implications,
+        limitations=limitations,
+        confidence_level=confidence_level,
+        edition_slug=edition_slug,
+    )
     flash("Sujet verifie transforme en brouillon.")
     return redirect(url_for("main.admin"))
 
@@ -383,4 +500,5 @@ def admin_preview(slug: str):
     article = get_any_article_by_slug(slug)
     if not article:
         abort(404)
-    return render_template("article_detail.html", article=article, meta_description=article.get("excerpt", "Preview article"))
+    edition = get_edition_by_slug(article.get("edition_slug", "")) if article.get("edition_slug") else None
+    return render_template("article_detail.html", article=article, edition=edition, meta_description=article.get("excerpt", "Preview article"))

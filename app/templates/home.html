@@ -12,6 +12,7 @@
     <div class="container">
         <div class="main-nav-links">
             <a href="{{ url_for('main.articles') }}">Articles</a>
+            <a href="{{ url_for('main.editions') }}">Editions</a>
             <a href="{{ url_for('main.rubriques') }}">Rubriques</a>
             <a href="{{ url_for('main.methodology') }}">Methodologie</a>
             <a href="{{ url_for('main.newsletter') }}">Newsletter</a>
@@ -32,6 +33,24 @@
         </div>
     </div>
 </section>
+
+{% if current_edition %}
+<section class="edition-strip">
+    <div class="container edition-strip-inner">
+        <div>
+            <p class="rubrique-label">{{ current_edition.number or "Edition hebdomadaire" }}</p>
+            <h3>{{ current_edition.title }}</h3>
+            <p>{{ current_edition.period }}{% if current_edition.theme %} • {{ current_edition.theme }}{% endif %}</p>
+        </div>
+        <div class="edition-strip-list">
+            {% for row in edition_articles %}
+            <a href="{{ url_for('main.article_detail', slug=row.slug) }}">{{ row.title }}</a>
+            {% endfor %}
+        </div>
+        <a class="read-link" href="{{ url_for('main.edition_detail', slug=current_edition.slug) }}">Voir l'edition</a>
+    </div>
+</section>
+{% endif %}
 
 <section class="today-africa-row">
     <div class="container">

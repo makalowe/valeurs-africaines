@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ edition.title }} | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section edition-hero">
+  <div class="container">
+    <p class="rubrique-label">{{ edition.number or "Edition hebdomadaire" }}</p>
+    <h1>{{ edition.title }}</h1>
+    <p class="meta">{{ edition.period }}{% if edition.published_at %} • Publication {{ edition.published_at }}{% endif %}</p>
+    {% if edition.theme %}<p class="edition-theme">{{ edition.theme }}</p>{% endif %}
+    {% if edition.editorial_title or edition.editorial %}
+    <div class="edition-editorial">
+      {% if edition.editorial_title %}<h2>{{ edition.editorial_title }}</h2>{% endif %}
+      {% if edition.editorial %}<p>{{ edition.editorial }}</p>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Sommaire</h2>
+    <div class="edition-article-grid">
+      {% for row in rows %}
+      <article class="edition-article-card">
+        {% if row.image %}
+        <a href="{{ url_for('main.article_detail', slug=row.slug) }}">
+          <img src="{{ url_for('static', filename='img/' + row.image) }}" alt="">
+        </a>
+        {% endif %}
+        <p class="rubrique-label">{{ row.rubrique }}</p>
+        <h3><a class="headline-link" href="{{ url_for('main.article_detail', slug=row.slug) }}">{{ row.title }}</a></h3>
+        <p>{{ row.excerpt[:220] }}{% if row.excerpt|length > 220 %}...{% endif %}</p>
+        <p class="meta">{{ row.published_at or "A paraitre" }} • {{ row.reading_time }}</p>
+      </article>
+      {% else %}
+      <p>Aucun article rattache a cette edition.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

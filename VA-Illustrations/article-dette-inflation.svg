@@ -1,0 +1,20 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#bg)"/>
+<text x="40" y="55" fill="#fff" font-family="Georgia,serif" font-size="24" font-weight="bold">Dette et inflation</text>
+<text x="40" y="80" fill="#e30613" font-family="Georgia,serif" font-size="16">L'equation politique des Etats francophones</text>
+<rect x="40" y="120" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="148" fill="#e30613" font-size="26" font-weight="bold">58%</text>
+<text x="110" y="148" fill="#ccc" font-size="12">ratio dette/PIB moyen</text>
+<text x="60" y="170" fill="#999" font-size="11">Zone franc CFA</text>
+<rect x="40" y="200" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="228" fill="#e30613" font-size="26" font-weight="bold">7,2%</text>
+<text x="110" y="228" fill="#ccc" font-size="12">inflation moyenne 2025</text>
+<text x="60" y="250" fill="#999" font-size="11">Hausse du cout de la vie</text>
+<rect x="40" y="280" width="220" height="65" rx="6" fill="#ffffff" opacity="0.08"/>
+<text x="60" y="308" fill="#e30613" font-size="26" font-weight="bold">12</text>
+<text x="85" y="308" fill="#ccc" font-size="12">pays africains en defaut ou risque</text>
+<text x="60" y="330" fill="#999" font-size="11">Surenchettement chinois</text>
+<text x="400" y="430" text-anchor="middle" fill="#555" font-size="11">Valeurs Africaines</text>
+</svg>
+echo "Dette OK"

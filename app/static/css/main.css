@@ -186,6 +186,43 @@ body {
     position: relative;
 }
 
+.edition-strip {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+}
+
+.edition-strip-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr auto;
+    gap: 22px;
+    align-items: center;
+}
+
+.edition-strip h3 {
+    margin: 0 0 6px;
+    font-size: 1.55rem;
+    line-height: 1.15;
+}
+
+.edition-strip p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.edition-strip-list {
+    display: grid;
+    gap: 6px;
+}
+
+.edition-strip-list a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid #eadfca;
+    padding-bottom: 5px;
+    font-size: 0.95rem;
+}
+
 .today-africa-row {
     background: #fff;
     padding: 10px 0 20px;
@@ -361,6 +398,8 @@ body {
 @media (max-width: 960px) {
     .hero-grid,
     .today-africa-grid,
+    .edition-strip-inner,
+    .edition-article-grid,
     .headline-grid,
     .newsletter-inner {
         grid-template-columns: 1fr;
@@ -398,6 +437,107 @@ body {
     color: #5e5e5e;
     font-style: normal;
 }
+
+.lead {
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.55;
+}
+
+.edition-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.edition-card {
+    border-top: 1px solid var(--line);
+    background: #fff;
+    padding: 18px 0 20px;
+}
+
+.edition-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+    line-height: 1.15;
+}
+
+.edition-card p {
+    max-width: 780px;
+}
+
+.edition-hero {
+    background: #fffdf8;
+    border-bottom: 1px solid #e4dece;
+}
+
+.edition-hero h1 {
+    max-width: 980px;
+    margin: 0 0 12px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+
+.edition-theme {
+    color: var(--red);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.edition-editorial {
+    max-width: 860px;
+    border-top: 1px solid #ddd4c3;
+    margin-top: 18px;
+    padding-top: 16px;
+}
+
+.edition-editorial h2 {
+    margin: 0 0 8px;
+    font-size: 1.3rem;
+}
+
+.edition-editorial p {
+    font-size: 1.18rem;
+    line-height: 1.7;
+}
+
+.edition-article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.edition-article-card {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+}
+
+.edition-article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    margin-bottom: 10px;
+}
+
+.edition-article-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.edition-context {
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.edition-context a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 700;
+}
+
 .rubrique-label {
     margin: 0 0 8px;
     color: var(--red);
@@ -444,6 +584,17 @@ body {
     border: 1px solid #c7c7c7;
     font-family: inherit;
 }
+
+.method-fieldset {
+    border: 1px solid var(--line);
+    padding: 14px;
+    margin: 14px 0;
+}
+
+.method-fieldset legend {
+    font-weight: 700;
+    padding: 0 8px;
+}
 .flash-box {
     margin-top: 12px;
     background: #fff5f5;
@@ -486,6 +637,22 @@ body {
     margin: 12px 0 16px;
 }
 
+.article-taxonomy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+}
+
+.article-taxonomy span {
+    border: 1px solid #d8cfbd;
+    background: #fff;
+    padding: 5px 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 .country-motto-line {
     margin: 0 0 6px;
     font-size: 1rem;
@@ -505,6 +672,49 @@ body {
     padding-right: 8px;
     font-family: Georgia, "Times New Roman", serif;
     color: #1c1c1c;
+}
+
+.article-brief-box,
+.article-method {
+    border: 1px solid #d8cfbd;
+    background: #fff9ed;
+    padding: 16px;
+    margin: 20px 0;
+}
+
+.article-brief-box h2,
+.article-method h2 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.article-brief-box ul,
+.article-method ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.article-brief-box li,
+.article-method li {
+    margin-bottom: 6px;
+    line-height: 1.55;
+}
+
+.article-method dl {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.35fr) 1fr;
+    gap: 8px 16px;
+    margin: 0 0 16px;
+}
+
+.article-method dt {
+    font-weight: 700;
+}
+
+.article-method dd {
+    margin: 0;
 }
 
 .kpi-grid {
@@ -530,11 +740,73 @@ body {
     font-size: 0.86rem;
 }
 
+.article-hero-button {
+    display: block;
+    width: 95%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: zoom-in;
+    margin: 10px auto 24px;
+}
+
 .article-hero-img {
+    display: block;
     width: 100%;
-    height: auto;
+    height: min(380px, 54vw);
+    object-fit: contain;
+    object-position: center;
+    background: #f6f0e3;
     border: 1px solid var(--line);
-    margin: 10px 0 18px;
+    border-radius: 8px;
+}
+
+.article-hero-button:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 4px;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: rgba(18, 18, 18, 0.88);
+}
+
+.image-lightbox.is-open {
+    display: flex;
+}
+
+.image-lightbox-img {
+    max-width: 96vw;
+    max-height: 92vh;
+    object-fit: contain;
+    background: #f6f0e3;
+    border-radius: 8px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.image-lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.lightbox-open {
+    overflow: hidden;
 }
 .article-sources {
     margin-top: 22px;
@@ -554,10 +826,19 @@ body {
     padding-left: 20px;
 }
 
+.article-sources ol {
+    margin: 0;
+    padding-left: 24px;
+}
+
 .article-sources li {
     margin-bottom: 6px;
     font-size: 1rem;
     line-height: 1.6;
+}
+
+.article-footnotes li::marker {
+    font-weight: 700;
 }
 
 .article-viz {

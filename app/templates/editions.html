@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Editions | Valeurs Africaines{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <p class="rubrique-label">Revue hebdomadaire</p>
+    <h1>Archives des editions</h1>
+    <p class="lead">Chaque numero rassemble les analyses publiees sur une meme semaine autour d'un fil geopolitique commun.</p>
+    <div class="edition-list">
+      {% for edition in rows %}
+      <article class="edition-card">
+        <p class="rubrique-label">{{ edition.number or "Edition" }}</p>
+        <h2><a class="headline-link" href="{{ url_for('main.edition_detail', slug=edition.slug) }}">{{ edition.title }}</a></h2>
+        <p class="meta">{{ edition.period }} • {{ edition_counts.get(edition.slug, 0) }} articles</p>
+        {% if edition.excerpt %}
+        <p>{{ edition.excerpt }}</p>
+        {% elif edition.editorial %}
+        <p>{{ edition.editorial[:260] }}{% if edition.editorial|length > 260 %}...{% endif %}</p>
+        {% endif %}
+        <a class="read-link" href="{{ url_for('main.edition_detail', slug=edition.slug) }}">Lire le numero</a>
+      </article>
+      {% else %}
+      <p>Aucune edition publiee pour le moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
