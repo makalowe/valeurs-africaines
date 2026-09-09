@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-09-09T08:59:13.2644291Z",
+  "root": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA",
+  "package_root": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages",
+  "excluded_dirs": [
+    ".git",
+    "node_modules",
+    ".next",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    "Archive",
+    ".git-historique-local",
+    "_drive-miroir"
+  ],
+  "excluded_files": [
+    ".env",
+    ".env.*",
+    "credentials.json",
+    "credentials*.json",
+    "token.json",
+    "*.pyc",
+    "abonnes-newsletter*.xlsx",
+    "abonnes-newsletter*.json"
+  ],
+  "packages": [
+    {
+      "name": "01-core-editorial.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\01-core-editorial.zip",
+      "bytes": 28464296
+    },
+    {
+      "name": "02-editorial-os.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\02-editorial-os.zip",
+      "bytes": 13718597
+    },
+    {
+      "name": "03-papy-peter.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\03-papy-peter.zip",
+      "bytes": 26703313
+    },
+    {
+      "name": "04-site-public-flask-code.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\04-site-public-flask-code.zip",
+      "bytes": 2708002
+    },
+    {
+      "name": "05-site-images-01.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\05-site-images-01.zip",
+      "bytes": 68609102
+    },
+    {
+      "name": "05-site-images-02.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\05-site-images-02.zip",
+      "bytes": 70384595
+    },
+    {
+      "name": "05-site-images-03.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\05-site-images-03.zip",
+      "bytes": 70366186
+    },
+    {
+      "name": "05-site-images-04.zip",
+      "path": "C:\\Users\\MIMBI\\OneDrive\\Documents\\VA\\Archive\\VA-cloudsafe-20260909-105846\\packages\\05-site-images-04.zip",
+      "bytes": 6696262
+    }
+  ]
+}
